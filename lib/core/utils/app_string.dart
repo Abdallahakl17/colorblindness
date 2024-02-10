@@ -9,10 +9,38 @@ class AppString {
   static const String onBoardingHead2 =
       'Our app comes with our specially designed glasses';
   static const String onBoardingTitle2 =
-      ' we\'re here to guide you on a journey to experience the full spectrum of colors.';
- 
-  static const String next =
-      'Next';
-  static const String skip =
-      'Skip';
+      'we\'re here to guide you on a journey to experience the full spectrum of colors.';
+
+  static const String next = 'Next';
+  static const String getStarted = 'Get Started';
+  static const String skip = 'Skip';
+  static const String back = 'Back';
+  static const String login = 'Login';
+  static const String sinUp = 'Sign Up';
+  static const String forgetPassword = 'Forgot Password?';
+  static const String welcom = 'Welcome back! Glad to see you, Again!';
+  static const String hello = 'Hello! Sign Up to get started';
+  static const String dontHaveAccount = 'Don’t have an account?';
+  static const String alreadyHaveAccount = 'Already have an account?';
+  static const String forgotPassword = 'Forgot Password?';
+  static const String rememberPassword = 'Remember Password?';
+  static const String forgotPasswordText =
+      'Don\'tworry! It occurs. Please enter the email address linked with your account.';
+  static const String singUpNow = '${sinUp}Now';
+  static const String loginNow = '${login}Now';
+  static const String otp = 'OTP Verification';
+  static const String verify = 'Verify';
+  static const String verifyAccount = '${verify}Account';
+  static const String sendCode = 'Send Code';
+  static const String backtoLogin = 'Back to Login';
+  static const String ressendCode = ' Resend Code';
+  static const String passwordChanged = 'Password Changed!';
+  static const String dontReciveCode = 'Didn’t recieve code?';
+  static const String passwordChangedText =
+      'Your password has been changed successfully.';
+  static const String createPassword = 'Create New Password';
+  static const String otpText =
+      'Enter the verification code we just sent on your email address.';
+  static const String createPasswordText =
+      'Your new password must be unique from those previously used.';
 }

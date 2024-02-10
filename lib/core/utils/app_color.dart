@@ -6,5 +6,6 @@ class AppColor {
   static const Color blackColor = Color(0xFF000000);
   static const Color titleBoardgingColor = Color(0xFF6A707C);
   static const Color whiteColor = Color(0xFFFFFFFF);
+  static const Color buttonsColor = Color(0xFFC2E6FF);
   static const Color hiddenColor = Colors.transparent;
 }

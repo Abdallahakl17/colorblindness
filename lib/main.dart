@@ -3,6 +3,7 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'presentaions/screens/on_boarding/on_boarding.dart';
+import 'presentaions/widgets/custom_buttons.dart';
 
 PageController globalPageController = PageController();
 
@@ -30,7 +31,11 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
+    var width = MediaQuery.sizeOf(context).width;
+    var heigth = MediaQuery.sizeOf(context).height;
+    print(heigth);
+    print(width);
+    return const ScreenUtilInit(
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(

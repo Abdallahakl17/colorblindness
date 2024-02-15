@@ -1,13 +1,13 @@
-import 'package:color_blindness/main.dart';
-import 'package:color_blindness/presentaions/screens/on_boarding/on_boarding.dart';
+  import 'package:color_blindness/presentaions/widgets/onboarding/container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
- 
+
 import '../../../core/utils/app_color.dart';
- import '../../../core/utils/app_string.dart';
+import '../../../core/utils/app_string.dart';
+import '../../../core/utils/shared/shared.dart';
 import '../../routes/appRoutes.dart';
- import '../custom_buttons.dart';
+import '../custom_buttons.dart';
 import 'smooth_page_indicator.dart';
 
 class OnBoarding2 extends StatelessWidget {
@@ -68,48 +68,14 @@ class OnBoarding2 extends StatelessWidget {
                   SizedBox(height: 10.h),
                   isLast
                       ? CustomButton(
+                        heigth: 44,
+                        width: double.infinity,
                           onTapped: () => Routes.navigateToLogin(context),
                           text: AppString.getStarted,
                         )
                       : InkWell(
                           onTap: () => Routes.navigateToLogin(context),
-                          child: Row(
-                            children: [
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  AppString.skip,
-                                  style: GoogleFonts.poppins(
-                                      fontSize: 17.sp,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              const Spacer(),
-                              InkWell(
-                                onTap: () {
-                                  globalPageController.nextPage(
-                                      duration:
-                                          const Duration(milliseconds: 750),
-                                      curve: Curves.bounceInOut);
-                                },
-                                child: Container(
-                                    decoration: BoxDecoration(
-                                        color: AppColor.whiteColor,
-                                        borderRadius:
-                                            BorderRadius.circular(20.r)),
-                                    width: 80.w,
-                                    height: 50.h,
-                                    child: Center(
-                                        child: Text(
-                                      AppString.next,
-                                      style: GoogleFonts.poppins(
-                                          fontSize: 17.sp,
-                                          fontWeight: FontWeight.bold),
-                                    ))),
-                              ),
-                            ],
-                          ),
-                        ),
+                          child: const ContanierBoarding()),
                   SizedBox(
                     height: 9.h,
                     width: double.infinity,

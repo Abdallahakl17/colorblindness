@@ -18,7 +18,7 @@ class AppString {
   static const String login = 'Login';
   static const String sinUp = 'Sign Up';
   static const String forgetPassword = 'Forgot Password?';
-  static const String welcom = 'Welcome back! Glad to see you, Again!';
+  static const String welcom = 'Welcome back! Glad \nto see you, Again!';
   static const String hello = 'Hello! Sign Up to get started';
   static const String dontHaveAccount = 'Don’t have an account?';
   static const String alreadyHaveAccount = 'Already have an account?';

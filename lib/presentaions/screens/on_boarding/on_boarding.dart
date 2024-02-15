@@ -1,10 +1,9 @@
 import 'package:color_blindness/core/utils/app_images.dart';
 import 'package:color_blindness/core/utils/app_string.dart';
-import 'package:color_blindness/main.dart';
-import 'package:color_blindness/presentaions/widgets/onboarding/on2.dart';
+ import 'package:color_blindness/presentaions/widgets/onboarding/on2.dart';
 import 'package:flutter/material.dart';
 
-bool isLast = false;
+import '../../../core/utils/shared/shared.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({super.key});
@@ -15,10 +14,17 @@ class OnBoarding extends StatefulWidget {
 
 class _OnBoardingState extends State<OnBoarding> {
   @override
+  void dispose() {
+    globalPageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
         body: PageView(
+          scrollDirection: Axis.horizontal,
           onPageChanged: (value) {
             if (value == 2) {
               setState(() {

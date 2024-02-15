@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/utils/shared/them/them_data.dart';
 import 'presentaions/screens/on_boarding/on_boarding.dart';
-import 'presentaions/widgets/custom_buttons.dart';
-
-PageController globalPageController = PageController();
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,23 +22,18 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  void dispose() {
-    globalPageController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.sizeOf(context).width;
-    var heigth = MediaQuery.sizeOf(context).height;
-    print(heigth);
-    print(width);
-    return const ScreenUtilInit(
+    MediaQuery.sizeOf(context).width;
+    MediaQuery.sizeOf(context).height;
+
+    return ScreenUtilInit(
+      useInheritedMediaQuery: true,
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
+        theme: ThemeData(),
         debugShowCheckedModeBanner: false,
-        home: OnBoarding(),
+        home: const OnBoarding(),
       ),
     );
   }

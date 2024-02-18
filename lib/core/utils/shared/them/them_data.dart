@@ -1,31 +1,36 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../app_color.dart';
 
-ThemeData getDataThem(  )=>ThemeData( 
-  textTheme: 
-  
-   TextTheme(
+ 
+import 'package:color_blindness/presentaions/widgets/imports.dart';
 
-    // heading
-    displayLarge:  GoogleFonts.poppins(
-              color: AppColor.blackColor,
-              fontSize: 24.sp,
-              fontWeight: FontWeight.w600) 
-              ,headlineLarge:  GoogleFonts.poppins(
-              color: AppColor.blackColor,
-              
-              fontSize: 28.sp,
-              fontWeight: FontWeight.w600),
-              // title
-              headlineSmall:  GoogleFonts.poppins(
-                        color: AppColor.titleBoardgingColor,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600),
-                        //buttons
-                        headlineMedium:  GoogleFonts.poppins(
-                    fontSize: 16.sp, fontWeight: FontWeight.bold)
-  )
-);
+ThemeData getDataThem() => ThemeData(
+    appBarTheme:
+        const AppBarTheme(backgroundColor: AppColor.hiddenColor,
+          iconTheme: IconThemeData(color: AppColor.blackColor,size: 50)),
+    textTheme: TextTheme(
+      // heading
+      displayLarge: GoogleFonts.poppins(
+          color: AppColor.blackColor,
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w600),
+      headlineLarge: GoogleFonts.poppins(
+          color: AppColor.blackColor,
+          fontSize: 28.sp,
+          fontWeight: FontWeight.w600),
+      // title
+      headlineSmall: GoogleFonts.poppins(
+          color: AppColor.titleBoardgingColor,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w600),
+      //buttons
+      headlineMedium:
+          GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.bold),
+      labelMedium: GoogleFonts.poppins(
+          color: AppColor.titleBoardgingColor,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.normal),
+      bodyLarge: GoogleFonts.poppins(
+          color: AppColor.blackColor,
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w600),
+    ));

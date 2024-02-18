@@ -1,10 +1,8 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../core/utils/app_color.dart';
+
+import 'imports.dart';
 
 class CustomButton extends StatelessWidget {
   CustomButton({super.key, this.radius = 20, required this.text,this.onTapped,required this.heigth,required this.width});
@@ -28,10 +26,7 @@ class CustomButton extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: GoogleFonts.poppins(
-              color: AppColor.blackColor,
-              fontSize: 16.sp,
-              fontWeight: FontWeight.w600),
+          style: Theme.of(context).textTheme.bodyLarge
         )),
       ),
     );

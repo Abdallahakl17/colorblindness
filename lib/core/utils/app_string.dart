@@ -12,21 +12,27 @@ class AppString {
       'we\'re here to guide you on a journey to experience the full spectrum of colors.';
 
   static const String next = 'Next';
+  static const String email = 'Email';
+  static const String password = 'Password';
+  static const String userName = 'User Name';
   static const String getStarted = 'Get Started';
   static const String skip = 'Skip';
+  static const String enterYourEmail = 'Enter your email';
+  static const String enterYourPassword = 'Enter your$password';
   static const String back = 'Back';
   static const String login = 'Login';
+  static const String orLogin = 'Or $login with';
   static const String sinUp = 'Sign Up';
-  static const String forgetPassword = 'Forgot Password?';
+  static const String forgetPassword = 'Forgot $password?';
+  static const String confirmPassword = 'Confirm $password';
   static const String welcom = 'Welcome back! Glad \nto see you, Again!';
   static const String hello = 'Hello! Sign Up to get started';
   static const String dontHaveAccount = 'Don’t have an account?';
   static const String alreadyHaveAccount = 'Already have an account?';
-  static const String forgotPassword = 'Forgot Password?';
-  static const String rememberPassword = 'Remember Password?';
+   static const String rememberPassword = 'Remember Password?';
   static const String forgotPasswordText =
       'Don\'tworry! It occurs. Please enter the email address linked with your account.';
-  static const String singUpNow = '${sinUp}Now';
+  static const String singUpNow = '$sinUp Now';
   static const String loginNow = '${login}Now';
   static const String otp = 'OTP Verification';
   static const String verify = 'Verify';

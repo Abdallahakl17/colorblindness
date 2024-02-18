@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../../core/utils/app_color.dart';
-import '../../../core/utils/app_string.dart';
-import '../../../core/utils/shared/shared.dart';
-import '../../../main.dart';
+import '../imports.dart';
 
 class ContanierBoarding extends StatelessWidget {
   const ContanierBoarding({super.key});
@@ -37,7 +30,7 @@ class ContanierBoarding extends StatelessWidget {
               child: Center(
                   child: Text(
                 AppString.next,
-                 style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.headlineSmall,
               ))),
         ),
       ],

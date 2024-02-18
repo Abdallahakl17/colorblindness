@@ -1,15 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'core/utils/shared/them/them_data.dart';
-import 'presentaions/screens/on_boarding/on_boarding.dart';
+import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.delayed(const Duration(seconds: 3));
   FlutterNativeSplash.remove();
-  runApp(const MyApp());
+  runApp(const ScreenUtilInit(
+      designSize: Size(360, 690), // Provide the design size
+
+      useInheritedMediaQuery: true,
+      minTextAdapt: true, // Initialize minTextAdapt
+      splitScreenMode: true, // Initializ
+      child: MyApp()));
 }
 
 // ignore: must_be_immutable
@@ -23,18 +24,17 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    MediaQuery.sizeOf(context).width;
-    MediaQuery.sizeOf(context).height;
+    Size screenSize = MediaQuery.of(context).size;
 
-    return ScreenUtilInit(
-      useInheritedMediaQuery: true,
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: MaterialApp(
-        theme: ThemeData(),
-        debugShowCheckedModeBanner: false,
-        home: const OnBoarding(),
-      ),
+    // Get the width and height of the screen
+    double screenWidth = screenSize.width;
+    double screenHeight = screenSize.height;
+    print(screenHeight);
+    print(screenWidth);
+    return MaterialApp(
+      theme: getDataThem(),
+      debugShowCheckedModeBanner: false,
+      home: LoginScreen(),
     );
   }
 }

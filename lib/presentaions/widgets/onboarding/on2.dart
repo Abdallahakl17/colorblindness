@@ -1,14 +1,7 @@
-  import 'package:color_blindness/presentaions/widgets/onboarding/container.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+ 
+ 
 
-import '../../../core/utils/app_color.dart';
-import '../../../core/utils/app_string.dart';
-import '../../../core/utils/shared/shared.dart';
-import '../../routes/appRoutes.dart';
-import '../custom_buttons.dart';
-import 'smooth_page_indicator.dart';
+import '../imports.dart';
 
 class OnBoarding2 extends StatelessWidget {
   const OnBoarding2(
@@ -51,8 +44,7 @@ class OnBoarding2 extends StatelessWidget {
                   Text(
                     maxLines: 3,
                     heading,
-                    style: GoogleFonts.poppins(
-                        fontSize: 28.sp, fontWeight: FontWeight.w600),
+                    style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   SizedBox(
                     height: 10.h,
@@ -60,21 +52,18 @@ class OnBoarding2 extends StatelessWidget {
                   Text(
                     maxLines: 3,
                     title,
-                    style: GoogleFonts.poppins(
-                        color: AppColor.titleBoardgingColor,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w600),
+                    style: Theme.of(context).textTheme.headlineSmall
                   ),
                   SizedBox(height: 10.h),
                   isLast
                       ? CustomButton(
                         heigth: 44,
                         width: double.infinity,
-                          onTapped: () => Routes.navigateToLogin(context),
+                          onTapped: () => Routes.navigateTo (context:context,widget: LoginScreen() )  ,
                           text: AppString.getStarted,
                         )
                       : InkWell(
-                          onTap: () => Routes.navigateToLogin(context),
+                          onTap: () => Routes.navigateTo(context:context,widget: LoginScreen() )  ,
                           child: const ContanierBoarding()),
                   SizedBox(
                     height: 9.h,

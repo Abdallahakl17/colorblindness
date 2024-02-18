@@ -1,10 +1,20 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: file_names
 
-import '../screens/login/Login_screen.dart';
+import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 abstract class Routes {
-  static Future<dynamic> navigateToLogin(BuildContext context) {
+  static Future<dynamic> navigateTo(
+      {required BuildContext context, required Widget widget}) {
     return Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+        context, MaterialPageRoute(builder: (context) => widget));
+  }
+
+  static Future<dynamic> navigateToAndRemove(
+      {required BuildContext context, required Widget widget}) {
+    return Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => widget),
+      (route) => false,
+    );
   }
 }

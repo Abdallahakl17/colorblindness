@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:color_blindness/core/utils/app_images.dart';
 import 'package:color_blindness/core/utils/app_string.dart';
  import 'package:color_blindness/presentaions/widgets/onboarding/on2.dart';

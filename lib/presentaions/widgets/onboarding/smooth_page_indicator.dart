@@ -1,10 +1,8 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:flutter/material.dart';
- 
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../core/utils/app_color.dart';
+
+import '../imports.dart';
 
 class CustomPageIndicator extends StatelessWidget {
   CustomPageIndicator({

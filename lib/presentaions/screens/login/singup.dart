@@ -2,14 +2,15 @@
 
 import '../../widgets/imports.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class SingUpScreen extends StatelessWidget {
+  SingUpScreen({super.key});
   TextEditingController emialContoller = TextEditingController();
+  TextEditingController nameContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar( iconTheme: Theme.of(context).iconTheme,),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ScreenUtil().setWidth(24)),
@@ -17,43 +18,45 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppString.welcom,
+                AppString.hello,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               SizedBox(
                 height: 24.h,
               ),
               CustomTextField(
+                controller: nameContoller,
+                labelText: AppString.userName,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              CustomTextField(
                 controller: emialContoller,
-                labelText: AppString.enterYourEmail,
+                labelText: AppString.email,
               ),
               SizedBox(
                 height: 10.h,
               ),
               CustomTextField(
                 controller: passwordContoller,
-                labelText: AppString.enterYourPassword,
-                suffixIcon: Icons.remove_red_eye_outlined,
+                labelText: AppString.password,
+              ),
+              SizedBox(
+                height: 16.h,
+              ),
+              CustomTextField(
+                controller: passwordContoller,
+                labelText: AppString.confirmPassword,
               ),
               SizedBox(
                 height: 10.h,
               ),
-              Align(
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    AppString.forgetPassword,
-                    style: Theme.of(context).textTheme.labelMedium,
-                  )),
               Padding(
                 padding:
-                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(32)),
-                child: CustomButton(
-                    onTapped: () {
-                      
-                    },
-                    text: AppString.login,
-                    heigth: 56,
-                    width: double.infinity),
+                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(20)),
+                child:
+                    CustomButton(text: AppString.login, heigth: 56, width: 326),
               ),
               Column(
                 children: [
@@ -110,8 +113,7 @@ class LoginScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500),
                       ),
                       InkWell(
-                        onTap: () {Routes.navigateTo(
-                          context: context, widget: SingUpScreen());},
+                        onTap: () {},
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: ScreenUtil().setWidth(2.0)),
@@ -129,8 +131,8 @@ class LoginScreen extends StatelessWidget {
                   )
                 ],
               ),
-            ],
-          ),
+            ]     
+           ),
         ),
       ),
     );

@@ -4,13 +4,21 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.delayed(const Duration(seconds: 3));
   FlutterNativeSplash.remove();
-  runApp(const ScreenUtilInit(
+  runApp(
+    const ScreenUtilInit(
       designSize: Size(360, 690), // Provide the design size
 
       useInheritedMediaQuery: true,
       minTextAdapt: true, // Initialize minTextAdapt
       splitScreenMode: true, // Initializ
-      child: MyApp()));
+      child:
+          //    DevicePreview(
+
+          // enabled: !kReleaseMode,
+          // builder: (context) =>
+          MyApp(), // Wrap your app
+    ),
+  );
 }
 
 // ignore: must_be_immutable
@@ -32,6 +40,8 @@ class _MyAppState extends State<MyApp> {
     print(screenHeight);
     print(screenWidth);
     return MaterialApp(
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),

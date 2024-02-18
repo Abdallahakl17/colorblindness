@@ -2,15 +2,14 @@
 
 import '../../widgets/imports.dart';
 
-class SingUpScreen extends StatelessWidget {
-  SingUpScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
   TextEditingController emialContoller = TextEditingController();
-  TextEditingController nameContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( iconTheme: Theme.of(context).iconTheme,),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(ScreenUtil().setWidth(24)),
@@ -18,45 +17,47 @@ class SingUpScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppString.hello,
+                AppString.welcom,
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               SizedBox(
                 height: 24.h,
               ),
               CustomTextField(
-                controller: nameContoller,
-                labelText: AppString.userName,
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomTextField(
                 controller: emialContoller,
-                labelText: AppString.email,
+                labelText: AppString.enterYourEmail,
               ),
               SizedBox(
                 height: 10.h,
               ),
               CustomTextField(
                 controller: passwordContoller,
-                labelText: AppString.password,
-              ),
-              SizedBox(
-                height: 16.h,
-              ),
-              CustomTextField(
-                controller: passwordContoller,
-                labelText: AppString.confirmPassword,
+                labelText: AppString.enterYourPassword,
+                suffixIcon: Icons.remove_red_eye_outlined,
               ),
               SizedBox(
                 height: 10.h,
               ),
+              Align(
+                  alignment: Alignment.topRight,
+                  child: InkWell(
+                    onTap: () {
+                      Routes.navigateTo(
+                          context: context, widget: ForgetPassword());
+                    },
+                    child: Text(
+                      AppString.forgetPassword,
+                      style: Theme.of(context).textTheme.labelMedium,
+                    ),
+                  )),
               Padding(
                 padding:
-                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(20)),
-                child:
-                    CustomButton(text: AppString.login, heigth: 56, width: 326),
+                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(32)),
+                child: CustomButton(
+                    onTapped: () {},
+                    text: AppString.login,
+                    heigth: 56,
+                    width: double.infinity),
               ),
               Column(
                 children: [
@@ -113,17 +114,16 @@ class SingUpScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w500),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Routes.navigateTo(
+                              context: context, widget: SingUpScreen());
+                        },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: ScreenUtil().setWidth(2.0)),
                           child: Text(
                             AppString.singUpNow,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(
-                                    fontWeight: FontWeight.w800, fontSize: 14),
+                            style: Theme.of(context).textTheme.titleLarge!,
                           ),
                         ),
                       ),
@@ -131,8 +131,8 @@ class SingUpScreen extends StatelessWidget {
                   )
                 ],
               ),
-            ]     
-           ),
+            ],
+          ),
         ),
       ),
     );

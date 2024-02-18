@@ -29,8 +29,24 @@ ThemeData getDataThem() => ThemeData(
           color: AppColor.titleBoardgingColor,
           fontSize: 14.sp,
           fontWeight: FontWeight.normal),
+          // loginNow
+        titleLarge: GoogleFonts.poppins(
+          color: AppColor.blackColor,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.bold),
+          // textnowlogin
+        titleSmall: GoogleFonts.poppins(
+          color: AppColor.blackColor,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.normal),
       bodyLarge: GoogleFonts.poppins(
           color: AppColor.blackColor,
           fontSize: 16.sp,
           fontWeight: FontWeight.w600),
-    ));
+          // verfiy
+          bodyMedium:  GoogleFonts.poppins(
+          color: AppColor.titleBoardgingColor,
+          fontSize: 16.sp,
+          fontWeight: FontWeight.normal),
+    ),
+    );

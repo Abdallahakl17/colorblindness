@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable 
+// ignore_for_file: must_be_immutable
 import '../imports.dart';
 
 class CustomContainerWithIcon extends StatelessWidget {
@@ -11,7 +11,7 @@ class CustomContainerWithIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: 100.w,
+        width: MediaQuery.sizeOf(context).width / 3.67,
         height: 56.h,
         decoration: BoxDecoration(
             border: Border.all(

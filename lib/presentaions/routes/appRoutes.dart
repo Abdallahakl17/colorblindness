@@ -8,6 +8,11 @@ abstract class Routes {
     return Navigator.push(
         context, MaterialPageRoute(builder: (context) => widget));
   }
+  static Future<dynamic> navigateBack(
+      {required BuildContext context,  }) async {
+    return Navigator.pop(
+        context  );
+  }
 
   static Future<dynamic> navigateToAndRemove(
       {required BuildContext context, required Widget widget}) {
@@ -17,4 +22,6 @@ abstract class Routes {
       (route) => false,
     );
   }
+
+  
 }

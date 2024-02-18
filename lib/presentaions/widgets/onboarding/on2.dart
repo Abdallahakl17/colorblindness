@@ -1,6 +1,10 @@
  
  
 
+ 
+
+ 
+ 
 import '../imports.dart';
 
 class OnBoarding2 extends StatelessWidget {

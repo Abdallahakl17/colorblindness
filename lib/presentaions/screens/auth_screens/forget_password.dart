@@ -2,7 +2,7 @@ import '../../widgets/imports.dart';
 
 class ForgetPassword extends StatelessWidget {
   ForgetPassword({super.key});
-  TextEditingController emailController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +35,8 @@ class ForgetPassword extends StatelessWidget {
             ),
             CustomButton(
               text: AppString.sendCode,
+              onTapped: () => Routes.navigateTo(
+                  context: context, widget: const OtpVerification()),
             ),
             SizedBox(
               height: AppSized.heightbetweenContanier.h,

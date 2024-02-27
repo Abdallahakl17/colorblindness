@@ -22,4 +22,8 @@ export 'package:flutter/foundation.dart';
 export 'package:color_blindness/presentaions/screens/auth_screens/forget_password.dart';
 export 'package:color_blindness/core/utils/app_size.dart';
 export   'package:color_blindness/presentaions/screens/auth_screens/login_screen.dart';
- 
+ export   'package:color_blindness/presentaions/screens/auth_screens/otp_verification.dart';
+ export   'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+
+export  'package:color_blindness/presentaions/screens/auth_screens/create_new_password.dart';
+export  'package:color_blindness/presentaions/screens/auth_screens/Password_Changed.dart';

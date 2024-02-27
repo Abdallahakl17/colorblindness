@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
- 
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -8,10 +7,11 @@ class CustomTextField extends StatelessWidget {
   final String labelText;
   final String hintText;
   final IconData? prefixIcon;
-  final IconData?suffixIcon;
+  final IconData? suffixIcon;
   final bool obscureText;
-void Function (String)? onChang;
-   CustomTextField({super.key, 
+  void Function(String)? onChang;
+  CustomTextField({
+    super.key,
     required this.controller,
     this.onChang,
     this.suffixIcon,
@@ -24,23 +24,26 @@ void Function (String)? onChang;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged:onChang ,
+      onChanged: onChang,
+      
       controller: controller,
       obscureText: obscureText,
-      decoration: InputDecoration(             // Remove border color
-
-        suffixIconColor: AppColor.textFormColors,
-         filled: true,
-              fillColor:AppColor.textFormColors,
+      decoration: InputDecoration(
+        // Remove border color
+        hoverColor: AppColor.borderColors,
+        enabled: true,
+        filled: true,
+        fillColor: AppColor.textFeildColor,
         labelText: labelText,
         labelStyle: Theme.of(context).textTheme.labelMedium,
         hintText: hintText,
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-       suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
-        border:   OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(20.r))
-        ),
+        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+
+        border: OutlineInputBorder(
+
+            borderSide: const BorderSide(color: AppColor.borderColors,width: 10),
+            borderRadius: BorderRadius.all(Radius.circular(20.r))),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {

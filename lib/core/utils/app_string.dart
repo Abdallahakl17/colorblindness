@@ -24,6 +24,8 @@ class AppString {
   static const String orLogin = 'Or $login with';
   static const String sinUp = 'Sign Up';
   static const String forgetPassword = 'Forgot $password?';
+  static const String newPassword = 'New $password';
+  static const String resetPassword = 'Reset $password';
   static const String confirmPassword = 'Confirm $password';
   static const String welcom = 'Welcome back! Glad \nto see you, Again!';
   static const String hello = 'Hello! Sign Up to get started';
@@ -43,7 +45,7 @@ class AppString {
   static const String passwordChanged = 'Password Changed!';
   static const String dontReciveCode = 'Didn’t recieve code?';
   static const String passwordChangedText =
-      'Your password has been changed successfully.';
+      'Your password has been \n  changed successfully.';
   static const String createPassword = 'Create New Password';
   static const String otpText =
       'Enter the verification code we just sent on your email address.';

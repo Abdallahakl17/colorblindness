@@ -8,16 +8,16 @@ environment:
 
 dependencies:
   cupertino_icons: ^1.0.2
+  custom_otp_textfield: ^0.0.2
   device_preview: ^1.1.0
   flutter:
     sdk: flutter
-  material: '^1.0.0+2'  
   flutter_native_splash: ^2.3.10
   flutter_otp_text_field: ^1.1.1
-
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
+  material: ^1.0.0+2
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:

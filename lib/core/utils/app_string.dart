@@ -31,13 +31,14 @@ class AppString {
   static const String hello = 'Hello! Sign Up to get started';
   static const String dontHaveAccount = 'Don’t have an account?';
   static const String alreadyHaveAccount = 'Already have an account?';
-   static const String rememberPassword = 'Remember Password?';
+  static const String rememberPassword = 'Remember Password?';
   static const String forgotPasswordText =
       'Don\'tworry! It occurs. Please enter the email address linked with your account.';
   static const String singUpNow = '$sinUp Now';
   static const String loginNow = '${login}Now';
   static const String otp = 'OTP Verification';
   static const String verify = 'Verify';
+  static const String test = 'Test';
   static const String verifyAccount = '${verify}Account';
   static const String sendCode = 'Send Code';
   static const String backtoLogin = 'Back to Login';

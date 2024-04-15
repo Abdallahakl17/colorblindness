@@ -1,4 +1,3 @@
-
 import '../../widgets/imports.dart';
 
 class OtpVerification extends StatelessWidget {
@@ -25,39 +24,45 @@ class OtpVerification extends StatelessWidget {
               AppString.otpText,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: ScreenUtil().setHeight(25.h),
-                      bottom: ScreenUtil().setHeight(32.h)),
-                  child: OtpTextField(borderRadius: BorderRadius.circular(12.r),
-                    fieldWidth: 70,
-                    numberOfFields: 4,
-                    fillColor: AppColor.titleBoardgingColor,
-                    borderColor: AppColor.dotsColors,
-                    showFieldAsBox: true,
-                    focusedBorderColor: AppColor.dotsColors,
-                    onCodeChanged: (String code) {},
-                    onSubmit: (String verificationCode) {
-                      // showDialog(
-                      //   context: context,
-                      //   builder: (context) {
-                      //     return AlertDialog(
-                      //       title: const Text("Verification Code"),
-                      //       content: Text('Code entered is $verificationCode'),
-                      //     );
-                      //   },
-                      // );
-                    },
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: ScreenUtil().setHeight(25.h),
+                        bottom: ScreenUtil().setHeight(32.h)),
+                    child: OtpTextField(
+                      borderRadius:
+                          BorderRadius.circular(ScreenUtil().setWidth(12.r)),
+                      fieldWidth: ScreenUtil().setWidth(70),
+                      numberOfFields: 4,
+                      fillColor: AppColor.titleBoardgingColor,
+                      borderColor: AppColor.dotsColors,
+                      showFieldAsBox: true,
+                      focusedBorderColor: AppColor.dotsColors,
+                      onCodeChanged: (String code) {},
+                      onSubmit: (String verificationCode) {
+                        // showDialog(
+                        //   context: context,
+                        //   builder: (context) {
+                        //     return AlertDialog(
+                        //       title: const Text("Verification Code"),
+                        //       content: Text('Code entered is $verificationCode'),
+                        //     );
+                        //   },
+                        // );
+                      },
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             CustomButton(
               text: AppString.sendCode,
-              onTapped: () => Routes.navigateTo(context: context, widget: CrrateNewPassword()),
+              onTapped: () => Routes.navigateTo(
+                  context: context, widget: CrrateNewPassword()),
             ),
             SizedBox(
               height: AppSized.heightbetweenContanier.h,

@@ -1,3 +1,4 @@
+import 'package:color_blindness/presentaions/screens/home_page/test.dart';
 
 import '../../widgets/imports.dart';
 
@@ -44,8 +45,8 @@ class CrrateNewPassword extends StatelessWidget {
             ),
             CustomButton(
               text: AppString.resetPassword,
-              onTapped: () => Routes.navigateTo(
-                  context: context, widget:  PasswordChanged()),
+              onTapped: () =>
+                  Routes.navigateTo(context: context, widget: const Test()),
             ),
           ],
         ),

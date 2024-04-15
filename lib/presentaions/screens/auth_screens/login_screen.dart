@@ -12,7 +12,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(ScreenUtil().setWidth(24)),
+          padding: EdgeInsets.all(ScreenUtil().setWidth(24.w)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -52,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                   )),
               Padding(
                 padding:
-                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(32)),
+                    EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(32.h)),
                 child: CustomButton(
                     onTapped: () {},
                     text: AppString.login,

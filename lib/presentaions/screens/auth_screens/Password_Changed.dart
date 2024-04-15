@@ -1,4 +1,4 @@
-import '../../widgets/imports.dart';
+import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class PasswordChanged extends StatelessWidget {
   const PasswordChanged({super.key});
@@ -12,16 +12,21 @@ class PasswordChanged extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AppImages.imageSuccess,height: 100.h,width: 100.w,),
+            Image.asset(
+              AppImages.imageSuccess,
+              height: 100.h,
+              width: 100.w,
+            ),
             SizedBox(
               height: AppSized.heightbetweenContanier.h,
             ),
             Text(
               AppString.passwordChanged,
               style: Theme.of(context).textTheme.displayLarge,
-            ),SizedBox(
-                height:8.h,
-              ),
+            ),
+            SizedBox(
+              height: 8.h,
+            ),
             SizedBox(
                 width: 226.w,
                 child: Align(

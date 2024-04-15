@@ -1,52 +1,56 @@
-
-
- 
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 ThemeData getDataThem() => ThemeData(
-    appBarTheme:
-        const AppBarTheme(backgroundColor: AppColor.hiddenColor,
-          iconTheme: IconThemeData(color: AppColor.blackColor,size: 50)),
-    textTheme: TextTheme(
-      // heading
-      displayLarge: GoogleFonts.poppins(
-          color: AppColor.blackColor,
-          fontSize: 24.sp,
-          fontWeight: FontWeight.w600),
-      headlineLarge: GoogleFonts.poppins(
-          color: AppColor.blackColor,
-          fontSize: 28.sp,
-          fontWeight: FontWeight.w600),
-      // title
-      headlineSmall: GoogleFonts.poppins(
-          color: AppColor.titleBoardgingColor,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w600),
-      //buttons
-      headlineMedium:
-          GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.bold),
-      labelMedium: GoogleFonts.poppins(
-          color: AppColor.titleBoardgingColor,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w500),
-          // loginNow
+      iconTheme: const IconThemeData(color: AppColor.titleBoardgingColor),
+      appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColor.blackColor),
+          backgroundColor: AppColor.hiddenColor,
+          iconTheme: IconThemeData(
+            color: AppColor.blackColor,
+          )),
+      textTheme: TextTheme(
+        // heading
+        displayLarge: GoogleFonts.poppins(
+            color: AppColor.blackColor,
+            fontSize: 24.sp,
+            fontWeight: FontWeight.w600),
+        headlineLarge: GoogleFonts.poppins(
+            color: AppColor.blackColor,
+            fontSize: 28.sp,
+            fontWeight: FontWeight.w600),
+        // title
+        headlineSmall: GoogleFonts.poppins(
+            color: AppColor.titleBoardgingColor,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w600),
+        //buttons
+        headlineMedium:
+            GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.bold),
+        labelMedium: GoogleFonts.poppins(
+            color: AppColor.titleBoardgingColor,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500),
+        // loginNow
         titleLarge: GoogleFonts.poppins(
-          color: AppColor.blackColor,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.bold),
-          // textnowlogin
+            color: AppColor.blackColor,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.bold),
+        // textnowlogin
         titleSmall: GoogleFonts.poppins(
-          color: AppColor.blackColor,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.normal),
-      bodyLarge: GoogleFonts.poppins(
-          color: AppColor.blackColor,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w600),
-          // verfiy
-          bodyMedium:  GoogleFonts.poppins(
-          color: AppColor.titleBoardgingColor,
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w500),
-    ),
+            color: AppColor.blackColor,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.normal),
+        bodyLarge: GoogleFonts.poppins(
+            color: AppColor.blackColor,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w600),
+        // verfiy
+        bodyMedium: GoogleFonts.poppins(
+            color: AppColor.titleBoardgingColor,
+            fontSize: 16.sp,
+            fontWeight: FontWeight.w500),
+      ),
     );

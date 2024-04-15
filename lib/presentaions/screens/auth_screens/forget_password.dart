@@ -52,7 +52,7 @@ class ForgetPassword extends StatelessWidget {
                   },
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        horizontal: ScreenUtil().setWidth(2.0)),
+                        horizontal: ScreenUtil().setWidth(2.0.w)),
                     child: Text(
                       AppString.login,
                       style: Theme.of(context).textTheme.titleLarge,

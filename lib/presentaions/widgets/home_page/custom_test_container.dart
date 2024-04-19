@@ -1,14 +1,19 @@
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
-
-
 class CustomTestContainer extends StatelessWidget {
-  const CustomTestContainer({Key? key}) : super(key: key);
+  CustomTestContainer({
+    Key? key,
+    required this.onPressed,
+    required this.imag,
+    required this.text,
+  }) : super(key: key);
+  void Function()? onPressed;
+  String imag;
+  String text;
 
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
-
 
     return Container(
       decoration: BoxDecoration(
@@ -19,6 +24,17 @@ class CustomTestContainer extends StatelessWidget {
         padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
         child: Row(
           children: [
+            CircleAvatar(
+                backgroundImage: AssetImage(
+              imag,
+            )),
+            SizedBox(
+              width: 10.w,
+            ),
+            Text(
+              text,
+              style: Theme.of(context).textTheme.displayMedium,
+            ),
             const Spacer(),
             Container(
               decoration: BoxDecoration(
@@ -40,10 +56,11 @@ class CustomTestContainer extends StatelessWidget {
                     AppColor.containerDotslinear2Color,
                   ],
                 ),
-                borderRadius: BorderRadius.circular(ScreenUtil().setWidth(12).w),
+                borderRadius:
+                    BorderRadius.circular(ScreenUtil().setWidth(12).w),
               ),
               child: IconButton(
-                onPressed: () {},
+                onPressed: onPressed,
                 icon: const Icon(
                   Icons.navigate_next_sharp,
                   color: AppColor.titleBoardgingColor,

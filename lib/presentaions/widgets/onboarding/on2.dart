@@ -13,21 +13,23 @@ class OnBoarding2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       // 320
-      width: double.infinity.w,
+
       child: Padding(
-        padding: EdgeInsets.all(ScreenUtil().setWidth(22.0)),
+        padding: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
         child: Column(
           children: [
             Expanded(
                 child: Container(
-              margin: EdgeInsets.all(ScreenUtil().setWidth(20)),
-              width: 280.w,
-              height: 273.h,
+              width: 273.w,
+              height: 270.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.contain, image: AssetImage(image)),
               ),
             )),
+            SizedBox(
+              height: 15.h,
+            ),
             Expanded(
                 child: Container(
               decoration: BoxDecoration(
@@ -36,22 +38,25 @@ class OnBoarding2 extends StatelessWidget {
               ),
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal: ScreenUtil().setWidth(28),
-                    vertical: ScreenUtil().setHeight(10)),
+                  horizontal: ScreenUtil().setWidth(30),
+                ),
                 child: Column(children: [
+                  SizedBox(
+                    height: 15.h,
+                  ),
                   Text(
                     maxLines: 3,
                     heading,
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
-                  SizedBox(
-                    height: 10.h,
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: ScreenUtil().setHeight(15)),
+                    child: Text(
+                        maxLines: 3,
+                        title,
+                        style: Theme.of(context).textTheme.headlineSmall),
                   ),
-                  Text(
-                      maxLines: 3,
-                      title,
-                      style: Theme.of(context).textTheme.headlineSmall),
-                  SizedBox(height: 10.h),
                   isLast
                       ? CustomButton(
                           heigth: 44,
@@ -65,18 +70,16 @@ class OnBoarding2 extends StatelessWidget {
                               context: context, widget: LoginScreen()),
                           child: const ContanierBoarding()),
                   SizedBox(
-                    height: 9.h,
+                    height: 10.h,
                     width: double.infinity,
                   ),
-                  Expanded(
-                    child: CustomPageIndicator(
-                      pageController: globalPageController,
-                      count: 3,
-                    ),
-                  )
+                  CustomPageIndicator(
+                    pageController: globalPageController,
+                    count: 3,
+                  ),
                 ]),
               ),
-            ))
+            )),
           ],
         ),
       ),

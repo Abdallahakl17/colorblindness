@@ -20,7 +20,7 @@ ThemeData getDataThem() => ThemeData(
         headlineLarge: GoogleFonts.poppins(
             color: AppColor.blackColor,
             fontSize: 28.sp,
-            fontWeight: FontWeight.w600),
+            fontWeight: FontWeight.w500),
         // title
         headlineSmall: GoogleFonts.poppins(
             color: AppColor.titleBoardgingColor,
@@ -38,6 +38,11 @@ ThemeData getDataThem() => ThemeData(
             color: AppColor.blackColor,
             fontSize: 14.sp,
             fontWeight: FontWeight.bold),
+        // text  contianer test
+        displayMedium: GoogleFonts.poppins(
+            color: AppColor.blackColor,
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500),
         // textnowlogin
         titleSmall: GoogleFonts.poppins(
             color: AppColor.blackColor,

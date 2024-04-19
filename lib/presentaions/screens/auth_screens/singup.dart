@@ -11,8 +11,6 @@ class SingUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.buttonsColor,
-        iconTheme: Theme.of(context).iconTheme,
       ),
       body: SingleChildScrollView(
         child: Padding(

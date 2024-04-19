@@ -45,6 +45,10 @@ class AppString {
   static const String ressendCode = ' Resend Code';
   static const String passwordChanged = 'Password Changed!';
   static const String dontReciveCode = 'Didn’t recieve code?';
+  static const String ishiharaTest = 'Ishihara Test';
+  static const String framsworthLannternTest = 'Framsworth Lanntern Test';
+  static const String cambridgeColorTest = 'Cambridge Color Test';
+  static const String kidsColorBlindTest = 'Kids Color Blind Test';
   static const String passwordChangedText =
       'Your password has been \n  changed successfully.';
   static const String createPassword = 'Create New Password';

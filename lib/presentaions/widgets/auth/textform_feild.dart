@@ -25,7 +25,6 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: onChang,
-      
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
@@ -39,11 +38,24 @@ class CustomTextField extends StatelessWidget {
         hintText: hintText,
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
-
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+                color: AppColor.borderColors,
+                width: ScreenUtil().setWidth(0.8.w)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(ScreenUtil().setWidth(20.r)))),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+                color: AppColor.borderColors,
+                width: ScreenUtil().setWidth(0.8.w)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(ScreenUtil().setWidth(20.r)))),
         border: OutlineInputBorder(
-
-            borderSide:  BorderSide(color: AppColor.borderColors,width: ScreenUtil().setWidth(20.w)),
-            borderRadius: BorderRadius.all(Radius.circular(ScreenUtil().setWidth(20.r)))),
+            borderSide: BorderSide(
+                color: AppColor.borderColors,
+                width: ScreenUtil().setWidth(20.w)),
+            borderRadius:
+                BorderRadius.all(Radius.circular(ScreenUtil().setWidth(20.r)))),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {

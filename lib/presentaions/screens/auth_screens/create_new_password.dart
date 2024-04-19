@@ -46,7 +46,7 @@ class CrrateNewPassword extends StatelessWidget {
             CustomButton(
               text: AppString.resetPassword,
               onTapped: () =>
-                  Routes.navigateTo(context: context, widget: const Test()),
+                  Routes.navigateTo(context: context, widget: Test()),
             ),
           ],
         ),

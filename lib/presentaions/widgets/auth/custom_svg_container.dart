@@ -11,14 +11,19 @@ class CustomContainerWithIcon extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: MediaQuery.sizeOf(context).width / 3.67,
+        width:100.w,
         height: 56.h,
         decoration: BoxDecoration(
             border: Border.all(
               color: AppColor.dotsColors,
             ),
             borderRadius: BorderRadius.circular(12)),
-        child: Center(child: SvgPicture.asset(image)),
+        child: Center(
+          child: FittedBox(
+            child: SvgPicture.asset(image),
+            fit: BoxFit.contain,
+          ),
+        ),
       ),
     );
   }

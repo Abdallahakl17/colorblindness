@@ -28,3 +28,8 @@ export   'package:color_blindness/presentaions/widgets/home_page/custom_test_con
 
 export '../../../../../core/utils/shared/shared.dart';
 export '../../../../../main.dart';
+export  'package:flutter_bloc/flutter_bloc.dart';
+export  'package:color_blindness/presentaions/controller/states/Auth_state.dart';
+export  'package:color_blindness/presentaions/screens/on_boarding/on_boarding.dart';
+// export  'package:color_blindness/presentaions/widgets/imports.dart';
+//  export    'package:color_blindness/app.dart';

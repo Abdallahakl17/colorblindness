@@ -9,7 +9,7 @@ class OtpVerification extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: ScreenUtil().setHeight(32.h),
-            horizontal: ScreenUtil().setWidth(24.w)),
+            horizontal: ScreenUtil().setWidth(22.w)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

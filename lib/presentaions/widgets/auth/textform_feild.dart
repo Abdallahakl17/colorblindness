@@ -10,6 +10,7 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   final bool obscureText;
   void Function(String)? onChang;
+    Function( )? onPressed;
   CustomTextField({
     super.key,
     required this.controller,
@@ -18,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     required this.labelText,
     this.hintText = '',
     this.prefixIcon,
+    this.onPressed,
     this.obscureText = false,
   });
 
@@ -37,7 +39,7 @@ class CustomTextField extends StatelessWidget {
         labelStyle: Theme.of(context).textTheme.labelMedium,
         hintText: hintText,
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-        suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+        suffixIcon:IconButton(onPressed: onPressed, icon: Icon(suffixIcon))  ,
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
                 color: AppColor.borderColors,

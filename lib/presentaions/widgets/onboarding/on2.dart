@@ -15,20 +15,19 @@ class OnBoarding2 extends StatelessWidget {
       // 320
 
       child: Padding(
-        padding: EdgeInsets.all(ScreenUtil().setWidth(24.0)),
+        padding: EdgeInsets.all(ScreenUtil().setWidth(22.0)),
         child: Column(
           children: [
-            Expanded(
-                child: Container(
+            Container(
               width: 273.w,
-              height: 270.h,
+              height: 273.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     fit: BoxFit.contain, image: AssetImage(image)),
               ),
-            )),
+            ),
             SizedBox(
-              height: 15.h,
+              height: 16.h,
             ),
             Expanded(
                 child: Container(
@@ -42,7 +41,7 @@ class OnBoarding2 extends StatelessWidget {
                 ),
                 child: Column(children: [
                   SizedBox(
-                    height: 15.h,
+                    height: 26.h,
                   ),
                   Text(
                     maxLines: 3,
@@ -51,7 +50,7 @@ class OnBoarding2 extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
-                        vertical: ScreenUtil().setHeight(15)),
+                        vertical: ScreenUtil().setHeight(16)),
                     child: Text(
                         maxLines: 3,
                         title,
@@ -77,7 +76,7 @@ class OnBoarding2 extends StatelessWidget {
                     pageController: globalPageController,
                     count: 3,
                   ),
-                ]),
+                 ]),
               ),
             )),
           ],

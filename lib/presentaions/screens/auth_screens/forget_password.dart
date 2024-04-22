@@ -10,7 +10,7 @@ class ForgetPassword extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(
             vertical: ScreenUtil().setHeight(32.h),
-            horizontal: ScreenUtil().setWidth(24.w)),
+            horizontal: ScreenUtil().setWidth(22.w)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -26,12 +26,16 @@ class ForgetPassword extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             Padding(
-              padding:
-                  EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(24.h)),
+              padding: EdgeInsets.only(
+                top: ScreenUtil().setHeight(24.h),
+              ),
               child: CustomTextField(
                 controller: emailController,
                 labelText: AppString.enterYourEmail,
               ),
+            ),
+            SizedBox(
+              height: 32.h,
             ),
             CustomButton(
               text: AppString.sendCode,
@@ -39,7 +43,7 @@ class ForgetPassword extends StatelessWidget {
                   context: context, widget: const OtpVerification()),
             ),
             SizedBox(
-              height: AppSized.heightbetweenContanier.h,
+              height: 32.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +59,10 @@ class ForgetPassword extends StatelessWidget {
                         horizontal: ScreenUtil().setWidth(2.0.w)),
                     child: Text(
                       AppString.login,
-                      style: Theme.of(context).textTheme.titleLarge,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(color: AppColor.titleBoardgingColor),
                     ),
                   ),
                 ),

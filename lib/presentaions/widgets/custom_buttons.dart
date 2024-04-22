@@ -21,8 +21,8 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onTapped,
       child: Container(
-        height: heigth.h,
-        width: width.w,
+        height: heigth,
+        width: width,
         // height: 44,
         // width: double.infinity,
         decoration: BoxDecoration(
@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
         child: Center(
             child: Text(
           text,
-          style: Theme.of(context).textTheme.headlineSmall  ,
+          style: Theme.of(context).textTheme.bodyLarge  ,
         )),
       ),
     );

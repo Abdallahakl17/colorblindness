@@ -9,12 +9,13 @@ class SingUpScreen extends StatelessWidget {
   TextEditingController passwordContoller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
+
     return Scaffold(
-      appBar: AppBar(
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(ScreenUtil().setWidth(24)),
+          padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(22)),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
@@ -22,7 +23,7 @@ class SingUpScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.displayLarge,
             ),
             SizedBox(
-              height: 24.h,
+              height: 20.h,
             ),
             CustomTextField(
               controller: nameContoller,
@@ -49,12 +50,11 @@ class SingUpScreen extends StatelessWidget {
               controller: passwordContoller,
               labelText: AppString.confirmPassword,
             ),
-            
             Padding(
               padding:
-                  EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(20)),
-              child:
-                  CustomButton(text: AppString.login, heigth: 56, width: 326),
+                  EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(22)),
+              child: CustomButton(
+                  text: AppString.sinUp, heigth: 56, width: 100.w),
             ),
             Column(
               children: [
@@ -78,7 +78,7 @@ class SingUpScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 18.h),
+                SizedBox(height: 16.h),
                 SizedBox(
                   width: double.infinity,
                   child: Row(
@@ -104,19 +104,21 @@ class SingUpScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      AppString.dontHaveAccount,
+                      AppString.alreadyHaveAccount,
                       style: Theme.of(context).textTheme.labelMedium!.copyWith(
                           color: AppColor.blackColor,
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: ScreenUtil().setWidth(2.0)),
                         child: Text(
-                          AppString.singUpNow,
+                          AppString.loginNow,
                           style: Theme.of(context)
                               .textTheme
                               .headlineSmall!

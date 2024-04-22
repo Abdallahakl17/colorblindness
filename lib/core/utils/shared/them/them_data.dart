@@ -20,11 +20,13 @@ ThemeData getDataThem() => ThemeData(
         headlineLarge: GoogleFonts.poppins(
             color: AppColor.blackColor,
             fontSize: 28.sp,
+            height: 1.46,
             fontWeight: FontWeight.w500),
         // title
         headlineSmall: GoogleFonts.poppins(
             color: AppColor.titleBoardgingColor,
             fontSize: 14.sp,
+            height: 1.48,
             fontWeight: FontWeight.w600),
         //buttons
         headlineMedium:

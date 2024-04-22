@@ -1,30 +1,51 @@
-// ignore_for_file: must_be_immutable
 import '../imports.dart';
 
-class CustomContainerWithIcon extends StatelessWidget {
-  CustomContainerWithIcon(
-      {super.key, required this.image, required this.onTap});
-  String image;
-  void Function()? onTap;
+class CustomContainerIcon extends StatelessWidget {
+  const CustomContainerIcon({
+    super.key,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width:100.w,
-        height: 56.h,
-        decoration: BoxDecoration(
-            border: Border.all(
-              color: AppColor.dotsColors,
-            ),
-            borderRadius: BorderRadius.circular(12)),
-        child: Center(
-          child: FittedBox(
-            child: SvgPicture.asset(image),
-            fit: BoxFit.contain,
-          ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Container(
+          width: 100.w,
+          height: 60.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all( width: 1.3,
+                color: AppColor.borderColors,
+              )),
+          child: Center(child: SvgPicture.asset(AppImages.imageFacebook)),
         ),
-      ),
+        Container(
+          width: 100.w,
+          height: 60.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all( width: 1.3,
+                color: AppColor.borderColors,
+              )),
+          child: Center(child: SvgPicture.asset(AppImages.imageGoogle)),
+        ),
+        Container(
+          width: 100.w,
+          height: 60.h,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                width: 1.3,
+                color: AppColor.borderColors,
+              )),
+          child: Center(
+              child: SvgPicture.asset(
+            AppImages.imageApple,
+            fit: BoxFit.contain,
+          )),
+        ),
+      ],
     );
   }
 }

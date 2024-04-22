@@ -18,17 +18,17 @@ class OnBoarding2 extends StatelessWidget {
         padding: EdgeInsets.all(ScreenUtil().setWidth(22.0)),
         child: Column(
           children: [
-            Container(
-              width: 273.w,
-              height: 273.h,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    fit: BoxFit.contain, image: AssetImage(image)),
+            Expanded(
+              child: Container(
+                width: 273.w,
+                height: 270.h,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.contain, image: AssetImage(image)),
+                ),
               ),
             ),
-            SizedBox(
-              height: 16.h,
-            ),
+            
             Expanded(
                 child: Container(
               decoration: BoxDecoration(

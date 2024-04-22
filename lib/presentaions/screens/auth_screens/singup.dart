@@ -1,139 +1,135 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:color_blindness/presentaions/controller/cubits/auth_cubit.dart';
+
 import '../../widgets/imports.dart';
 
 class SingUpScreen extends StatelessWidget {
   SingUpScreen({super.key});
   TextEditingController emialContoller = TextEditingController();
-  TextEditingController nameContoller = TextEditingController();
   TextEditingController passwordContoller = TextEditingController();
+  TextEditingController nameContoller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
-
-    return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(22)),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text(
-              AppString.hello,
-              style: Theme.of(context).textTheme.displayLarge,
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            CustomTextField(
-              controller: nameContoller,
-              labelText: AppString.userName,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(
-              controller: emialContoller,
-              labelText: AppString.email,
-            ),
-            SizedBox(
-              height: 10.h,
-            ),
-            CustomTextField(
-              controller: passwordContoller,
-              labelText: AppString.password,
-            ),
-            SizedBox(
-              height: 16.h,
-            ),
-            CustomTextField(
-              controller: passwordContoller,
-              labelText: AppString.confirmPassword,
-            ),
-            Padding(
-              padding:
-                  EdgeInsets.symmetric(vertical: ScreenUtil().setWidth(22)),
-              child: CustomButton(
-                  text: AppString.sinUp, heigth: 56, width: 100.w),
-            ),
-            Column(
-              children: [
-                Row(
-                  children: [
-                    const Expanded(
-                      child: Divider(
-                        color: AppColor.dotsColors,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: ScreenUtil().setWidth(8.0)),
-                      child: Text(AppString.orLogin,
-                          style: Theme.of(context).textTheme.headlineSmall),
-                    ),
-                    const Expanded(
-                      child: Divider(
-                        color: AppColor.dotsColors,
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 16.h),
-                SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomContainerWithIcon(
-                        onTap: () {},
-                        image: AppImages.imageFacebook,
-                      ),
-                      CustomContainerWithIcon(
-                        onTap: () {},
-                        image: AppImages.imageGoogle,
-                      ),
-                      CustomContainerWithIcon(
-                        onTap: () {},
-                        image: AppImages.imageApple,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: MediaQuery.sizeOf(context).height / 34.3),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+    
+            return Scaffold(
+              appBar: AppBar(),
+              body: Padding(
+                padding: EdgeInsets.all(24.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      AppString.alreadyHaveAccount,
-                      style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                          color: AppColor.blackColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500),
+                      AppString.hello,
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: ScreenUtil().setWidth(2.0)),
-                        child: Text(
-                          AppString.loginNow,
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    CustomTextField(
+                        controller: nameContoller,
+                        labelText: AppString.userName),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    CustomTextField(
+                        controller: emialContoller,
+                        labelText: AppString.email),
+                    SizedBox(
+                      height: 12.h,
+                    ),
+                    CustomTextField(
+                        controller: passwordContoller,
+                        
+                       
+                        labelText: AppString.password),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    CustomTextField(
+                        controller: passwordContoller,
+                        
+                       
+                        labelText: AppString.confirmPassword),
+                   
+        SizedBox(
+                      height: 24.h,
+                    ),
+                    CustomButton(
+                        onTapped: () {},
+                        text: AppString.sinUp,
+                        radius: 20,
+                        heigth: 56.h,
+                        width: double.infinity.w),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Row(
+                      children: [
+                        const Expanded(
+                          child: Divider(
+                            color: AppColor.borderColors,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: ScreenUtil().setWidth(8.0)),
+                          child: Text(AppString.orLogin,
+                              style: Theme.of(context).textTheme.headlineSmall),
+                        ),
+                        const Expanded(
+                          child: Divider(
+                            color: AppColor.borderColors,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    const CustomContainerIcon(),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          AppString.dontHaveAccount,
                           style: Theme.of(context)
                               .textTheme
-                              .headlineSmall!
+                              .labelMedium!
                               .copyWith(
-                                  fontWeight: FontWeight.w800, fontSize: 14),
+                                  color: AppColor.blackColor,
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500),
                         ),
-                      ),
+                        InkWell(
+                          onTap: () {
+                            Routes.navigateTo(
+                                context: context, widget: SingUpScreen());
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: ScreenUtil().setWidth(2.0)),
+                            child: Text(
+                              AppString.singUpNow,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(
+                                      color: AppColor.titleBoardgingColor),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
-                )
-              ],
-            ),
-          ]),
-        ),
-      ),
-    );
+                ),
+              ),
+            );
+          
+    
   }
 }
+

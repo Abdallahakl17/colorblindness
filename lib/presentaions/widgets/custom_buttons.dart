@@ -27,7 +27,7 @@ class CustomButton extends StatelessWidget {
         // width: double.infinity,
         decoration: BoxDecoration(
             color: AppColor.buttonsColor,
-            borderRadius: BorderRadius.circular(ScreenUtil().setWidth(radius.w))),
+            borderRadius: BorderRadius.all(Radius.circular(radius.r))),
         child: Center(
             child: Text(
           text,

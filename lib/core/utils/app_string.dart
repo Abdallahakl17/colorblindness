@@ -14,7 +14,7 @@ class AppString {
   static const String next = 'Next';
   static const String email = 'Email';
   static const String password = 'Password';
-  static const String userName = 'User Name';
+  static const String userName = 'UserName';
   static const String getStarted = 'Get Started';
   static const String skip = 'Skip';
   static const String enterYourEmail = 'Enter your email';

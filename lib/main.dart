@@ -1,13 +1,16 @@
-
+import 'package:color_blindness/presentaions/controller/bloc_observ.dart';
+import 'package:color_blindness/presentaions/controller/cubits/auth_cubit.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.delayed(const Duration(seconds: 3));
   FlutterNativeSplash.remove();
+  Bloc.observer = MyBlocObserver();
+  ScreenUtil.init;
   runApp(
     const ScreenUtilInit(
-      designSize: Size(360, 690), // Provide the design size
+      designSize: Size(360, 800), // Provide the design size
 
       useInheritedMediaQuery: true,
       minTextAdapt: true, // Initialize minTextAdapt
@@ -45,7 +48,7 @@ class _MyAppState extends State<MyApp> {
       // builder: DevicePreview.appBuilder,
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
-      home: OnBoarding(),
+      home: const OnBoarding(),
     );
   }
 }

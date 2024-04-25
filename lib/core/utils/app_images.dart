@@ -6,6 +6,7 @@ class AppImages {
   static const String imageApple = "assets/images/cib_apple.svg";
   static const String imageFacebook = "assets/images/facebook_ic.svg";
   static const String imageGoogle = "assets/images/Group 123.svg";
+  static const String imagegirlOutline = "assets/images/girlOutline.png";
   static const String ishiharaTest = "assets/images/IshiharaTest.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";

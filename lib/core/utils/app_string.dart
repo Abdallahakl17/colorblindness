@@ -56,4 +56,6 @@ class AppString {
       'Enter the verification code we just sent on your email address.';
   static const String createPasswordText =
       'Your new password must be unique from those previously used.';
+  static const String doYouKnow =
+      'Do You Know What Color Blindness is ?';
 }

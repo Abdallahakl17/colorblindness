@@ -21,7 +21,7 @@ class CustomTestContainer extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppSized.raduiscontainer.r),
       ),
       child: Padding(
-        padding: EdgeInsets.all(ScreenUtil().setWidth(20)),
+        padding: EdgeInsets.all(ScreenUtil().setWidth(20.w)),
         child: Row(
           children: [
             CircleAvatar(

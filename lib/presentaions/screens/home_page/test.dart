@@ -21,12 +21,16 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: false,
-            leadingWidth: 24.w,
-            title: const Text(
-              AppString.test,
-            )),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10.w),
+            child: AppBar(
+              title: Text(AppString.test),
+              titleSpacing: 4.w,
+            ),
+          ),
+        ),
         body: Padding(
           padding: EdgeInsets.all(ScreenUtil().setWidth(24)),
           child: ListView.separated(

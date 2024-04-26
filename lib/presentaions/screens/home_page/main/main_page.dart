@@ -1,5 +1,7 @@
+import 'package:color_blindness/presentaions/screens/home_page/test.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
+import '../../../widgets/home_page/con_icons_main_page.dart';
 import '../../../widgets/home_page/container_home_page.dart';
 
 class MainPage extends StatelessWidget {
@@ -8,47 +10,61 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 22.0),
+          child: AppBar(
+            actions: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.person_2,
+                  size: 32.w,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ContainerMainScreenView(),
-            SizedBox(
-              height: 22.h,
-            ),
-            Container(
-              width: 92.w,
-              height: 76.h,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    12.r,
-                  ),
-                  color: AppColor.containerTestColor),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            Padding(
+              padding:
+                  EdgeInsets.symmetric(vertical: ScreenUtil().setHeight(24.h)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    width: 60,
-                    height: 55,
-                    child: Image.asset(
-                      AppImages.imageCameraIcon,
-                      fit: BoxFit.cover,
-                    ),
+                  ConMainIconsHome(
+                    imag: AppImages.imageEyeIcon,
+                    text: AppString.test,
+                    onTap: () {
+                      Routes.navigateTo(context: context, widget: Test());
+                    },
                   ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 11.w,
-                      ),
-                      Text(
-                        AppString.camera,
-                        style: Theme.of(context).textTheme.displayMedium,
-                      )
-                    ],
-                  )
+                  ConMainIconsHome(
+                    imag: AppImages.imageGlassIcon,
+                    text: AppString.glassess,
+                    onTap: () {},
+                  ),
+                  ConMainIconsHome(
+                    imag: AppImages.imageCameraIcon,
+                    text: AppString.camera,
+                    onTap: () {},
+                  ),
                 ],
               ),
+            ),
+            Text(
+              AppString.articles,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: 18.sp),
             )
           ],
         ),
@@ -56,11 +72,3 @@ class MainPage extends StatelessWidget {
     );
   }
 }
-//  IconButton(
-//                       icon: Image.asset(
-//                         AppImages.imageCameraIcon,
-//                       ), // Replace 'icon.png' with your image path
-//                       onPressed: () {
-//                         // Handle button press
-//                       },
-                    // ),

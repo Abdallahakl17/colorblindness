@@ -12,6 +12,8 @@ class AppString {
       'we\'re here to guide you on a journey to experience the full spectrum of colors.';
 
   static const String next = 'Next';
+  static const String camera = 'Camera';
+  static const String glassess = 'Glassess';
   static const String email = 'Email';
   static const String password = 'Password';
   static const String userName = 'UserName';

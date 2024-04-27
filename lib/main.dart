@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:color_blindness/presentaions/controller/bloc_observ.dart';
 import 'package:color_blindness/presentaions/controller/cubits/auth_cubit.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
@@ -41,14 +43,14 @@ class _MyAppState extends State<MyApp> {
     // Get the width and height of the screen
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;
-    print(screenHeight);
-    print(screenWidth);
+    log(screenHeight.toString());
+    log(screenWidth.toString());
     return MaterialApp(
       // locale: DevicePreview.locale(context),
       // builder: DevicePreview.appBuilder,
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
-      home: const OnBoarding(),
+      home: const MainPage(),
     );
   }
 }

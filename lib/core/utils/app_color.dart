@@ -7,6 +7,7 @@ class AppColor {
   static const Color blackColor = Color(0xFF000000);
   static const Color titleBoardgingColor = Color(0xFF6A707C);
   static const Color whiteColor = Color(0xFFFFFFFF);
+  static const Color igthColor = Color(0xFF263238);
   static const Color continerMainScreen = Color(0xFFBED9F6);
   
   static const Color buttonsColor = Color(0xFFC2E6FF);

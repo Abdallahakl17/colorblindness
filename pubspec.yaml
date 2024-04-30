@@ -6,21 +6,23 @@ environment:
   sdk: '>=3.2.3 <4.0.0'
 
 dependencies:
+  bloc: ^8.1.4
   cupertino_icons: ^1.0.2
   custom_otp_textfield: ^0.0.2
+  dartz: ^0.10.1
   device_preview: ^1.1.0
+  dio: ^5.4.3+1
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  
+  flutter_bloc: ^8.0.0
   flutter_native_splash: ^2.3.10
   flutter_otp_text_field: ^1.1.1
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
-  flutter_bloc: ^8.0.0
   material: ^1.0.0+2
   smooth_page_indicator: ^1.1.0
-  bloc: ^8.1.4
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1

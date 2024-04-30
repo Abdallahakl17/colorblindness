@@ -18,38 +18,41 @@ class SpearatedRowItems extends StatelessWidget {
             elevation: 5,
             child: Container(
               width: 169.w,
-              height: 166.h,
+              height: 153.h,
               decoration: const BoxDecoration(color: AppColor.whiteColor),
               child: Column(
                 children: [
-                  Image.asset(
-                    AppImages.imageGlassArticle,
-                    width: double.infinity,
-                    fit: BoxFit.cover,
+                  Expanded(
+                    child: Image.asset(
+                      AppImages.imageGlassArticle,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  SizedBox(
-                    width: double.infinity,
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 7.h, horizontal: 13.w),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 147.w,
-                            height: 19.h,
-                            child: Text(
-                              "Color Blindness case  .. ",
-                              overflow: TextOverflow.ellipsis,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall!
-                                  .copyWith(fontWeight: FontWeight.w600),
+                  Expanded(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 7.h, horizontal: 13.w),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                               
+                              child: Text(
+                                "Color Blindness case  .. ",
+                                overflow: TextOverflow.ellipsis,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleSmall!
+                                    .copyWith(fontWeight: FontWeight.w600),
+                              ),
                             ),
-                          ),
-                          Text("Lorem ipsum dolor \nsit amet",
-                              style: Theme.of(context).textTheme.titleMedium),
-                        ],
+                            Text("Lorem ipsum dolor \nsit amet",
+                                style: Theme.of(context).textTheme.titleMedium),
+                          ],
+                        ),
                       ),
                     ),
                   ),

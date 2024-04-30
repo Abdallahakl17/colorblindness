@@ -1,12 +1,14 @@
 import 'dart:developer';
 
+import 'package:color_blindness/app.dart';
+import 'package:color_blindness/core/utils/shared/api_helper/api_helper.dart';
 import 'package:color_blindness/presentaions/controller/bloc_observ.dart';
-import 'package:color_blindness/presentaions/controller/cubits/auth_cubit.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Future.delayed(const Duration(seconds: 3));
+  await Future.delayed(const Duration(seconds: 2));
+await ApiHelper.intia();
   FlutterNativeSplash.remove();
   Bloc.observer = MyBlocObserver();
   ScreenUtil.init;
@@ -50,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       // builder: DevicePreview.appBuilder,
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      home:   Apps(),
     );
   }
 }

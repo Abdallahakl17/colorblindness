@@ -32,3 +32,8 @@ export 'package:color_blindness/presentaions/controller/states/Auth_state.dart';
 export 'package:color_blindness/presentaions/screens/on_boarding/on_boarding.dart';
 export 'package:color_blindness/presentaions/controller/cubits/auth_cubit.dart';
 export 'package:color_blindness/presentaions/screens/home_page/main/main_page.dart';
+export  'package:color_blindness/presentaions/screens/home_page/test.dart';
+export  'package:color_blindness/presentaions/widgets/home_page/con_icons_main_page.dart';
+export  'package:color_blindness/presentaions/widgets/home_page/container_home_page.dart';
+export  'package:color_blindness/presentaions/widgets/home_page/spearated_Row_Items_main.dart';
+  

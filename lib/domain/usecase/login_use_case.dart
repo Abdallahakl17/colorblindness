@@ -7,6 +7,6 @@ class LoginUsecase {
   BaseLoginRepo baseLoginRepo;
   LoginUsecase(this.baseLoginRepo);
 Future<Either<ServiceExceptions, LoginEntityModel>> excute(String email, String password) async {
-    return await baseLoginRepo.postLogin(email, password);
+    return   baseLoginRepo.postLogin(email, password);
   }
 }

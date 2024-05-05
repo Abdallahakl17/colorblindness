@@ -1,64 +1,45 @@
-import 'dart:developer';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
-import 'package:color_blindness/core/utils/shared/api_helper/api_helper.dart';
-import 'package:color_blindness/core/utils/shared/app_const.dart';
-import 'package:color_blindness/core/utils/shared/erorr/exceptions_service.dart';
-import 'package:color_blindness/core/utils/shared/erorr/remote_erorr.dart';
-import 'package:color_blindness/data/datasource/login_data_source.dart';
-import 'package:color_blindness/data/model/login_factory_model.dart';
-import 'package:color_blindness/data/repository/login_repo.dart';
-import 'package:color_blindness/domain/repository/base_loin_repository.dart';
-import 'package:color_blindness/domain/usecase/login_use_case.dart';
-import 'package:color_blindness/presentaions/widgets/imports.dart';
-import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
-
-class Apps extends StatelessWidget {
+class Apps extends StatefulWidget {
   const Apps({super.key});
 
-  Future<void> login({required String email, required String password}) async {
-    try {
-      // Create Dio instance
-      Dio dio = Dio();
+  @override
+  _MyAppState createState() => _MyAppState();
+}
 
-      // Define request body
-      Map<String, dynamic> requestBody = {
-        'email': email,
-        'password': password,
-      };
-
-      // Make POST request
-      Response response = await dio.post(
-        'https://student.valuxapps.com/api/login',
-        data: requestBody,
-      );
-      // Handle response
-      if (response.statusCode == 200) {
-        // Request successful, handle the response data here
-        print('Login successful!');
-        print(response.data);
-      } else {
-        // Request failed with a non-200 status code
-        print('Request failed with status code: ${response.statusCode}');
-        print(response.data);
-      }
-    } catch (error) {
-      // Handle Dio errors
-      print('Error occurred: $error');
+class _MyAppState extends State<Apps> {
+  // Function to make the API request
+  Future<void> fetchToken() async {
+    final response = await http.post(
+      Uri.parse('https://colorblindapi.runasp.net/api/users/login'),
+      body: jsonEncode({'username': 'Mohmed@gamil', 'password': 'Mohamed@123'}),
+      headers: {'Content-Type': 'application/json'},
+    );
+    if (response.statusCode == 200) {
+      print(response.body.toString());
+    } else {
+      throw Exception('Failed to get token');
     }
   }
 
-// Example usage:
+  @override
+  void initState() {
+    super.initState();
+    fetchToken();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: () async {
-              await login(email: 'algazzar.22@gmail.com_', password: '123456');
-            },
-            icon: const Icon(Icons.abc)),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Color Blind API Response'),
+        ),
+        body: const Center(
+          child: Text('Token:  '), // Display token
+        ),
       ),
     );
   }

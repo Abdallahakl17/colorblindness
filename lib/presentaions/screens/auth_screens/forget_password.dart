@@ -30,6 +30,7 @@ class ForgetPassword extends StatelessWidget {
                 top: ScreenUtil().setHeight(24.h),
               ),
               child: CustomTextField(
+                 
                 controller: emailController,
                 labelText: AppString.enterYourEmail,
               ),

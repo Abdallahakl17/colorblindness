@@ -1,5 +1,11 @@
 import 'dart:developer';
 
+import 'package:color_blindness/core/utils/services/serv.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:color_blindness/app.dart';
 import 'package:color_blindness/core/utils/shared/api_helper/api_helper.dart';
 import 'package:color_blindness/presentaions/controller/bloc_observ.dart';
@@ -8,30 +14,27 @@ import 'package:color_blindness/presentaions/widgets/imports.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Future.delayed(const Duration(seconds: 2));
-await ApiHelper.intia();
   FlutterNativeSplash.remove();
   Bloc.observer = MyBlocObserver();
   ScreenUtil.init;
+  Sevices().init();
+    ApiHelper.intia();
   runApp(
     const ScreenUtilInit(
-      designSize: Size(360, 800), // Provide the design size
-
+      designSize: Size(360, 800),
       useInheritedMediaQuery: true,
-      minTextAdapt: true, // Initialize minTextAdapt
-      splitScreenMode: true, // Initializ
-      child:
-          //    DevicePreview(
-
-          // enabled: !kReleaseMode,
-          // builder: (context) =>
-          MyApp(), // Wrap your app
+      minTextAdapt: true,
+      splitScreenMode: true,
+      child: MyApp(),
     ),
   );
 }
 
 // ignore: must_be_immutable
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+  });
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -41,18 +44,15 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-
-    // Get the width and height of the screen
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;
     log(screenHeight.toString());
     log(screenWidth.toString());
+    print(sl<LoginUsecase>().hashCode);
     return MaterialApp(
-      // locale: DevicePreview.locale(context),
-      // builder: DevicePreview.appBuilder,
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
-      home:   Apps(),
+      home: const OnBoarding(),
     );
   }
 }

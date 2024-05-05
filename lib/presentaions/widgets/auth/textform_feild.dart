@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   final IconData? suffixIcon;
   final bool obscureText;
   void Function(String)? onChang;
-    Function( )? onPressed;
+  Function()? onPressed;
   CustomTextField({
     super.key,
     required this.controller,
@@ -21,11 +21,13 @@ class CustomTextField extends StatelessWidget {
     this.prefixIcon,
     this.onPressed,
     this.obscureText = false,
+      
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      scrollPadding: const EdgeInsets.all(20.0),
       onChanged: onChang,
       controller: controller,
       obscureText: obscureText,
@@ -39,7 +41,7 @@ class CustomTextField extends StatelessWidget {
         labelStyle: Theme.of(context).textTheme.labelMedium,
         hintText: hintText,
         prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-        suffixIcon:IconButton(onPressed: onPressed, icon: Icon(suffixIcon))  ,
+        suffixIcon: IconButton(onPressed: onPressed, icon: Icon(suffixIcon)),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
                 color: AppColor.borderColors,
@@ -61,7 +63,7 @@ class CustomTextField extends StatelessWidget {
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter $labelText';
+          return 'Please $labelText';
         }
         return null;
       },

@@ -30,7 +30,7 @@ class _OnBoardingState extends State<OnBoarding> {
             });
           } else {
             setState(() {
-              isLast = false;
+              isLast = !isLast;
               print('noislast');
             });
           }

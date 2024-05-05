@@ -18,14 +18,19 @@ class LoginRemoteDataSource extends BaseRemoteDataSource {
   Future<LoginFactoryMoel> login(
       {required String email, required String password}) async {
     return ApiHelper.postData(
-            data: {'email': email, 'password': password},
+            data: {'email':email, 'password':password},
+            query: {'Content-Type': 'application/json'},
             path: ApiConst.loginUrl)
         .then((value) {
       if (value.statusCode == 200) {
         print(value.data);
+        log(name: 'success :',value.data);
         return LoginFactoryMoel.fromJson(value.data);
       } else {
+                log(name: 'error :',value.data);
+
         throw ServiceExceptions(
+          
             errorResponse: ErrorResponse.fromJson(value.data));
       }
     });

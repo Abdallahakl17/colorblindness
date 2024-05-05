@@ -32,11 +32,13 @@ class CrrateNewPassword extends StatelessWidget {
                 child: CustomTextField(
                   controller: passwordController,
                   labelText: AppString.newPassword,
+                  
                 )),
             SizedBox(
               height: AppSized.heightbetweenText.h,
             ),
             CustomTextField(
+              
               controller: passwordController,
               labelText: AppString.confirmPassword,
             ),

@@ -1,4 +1,5 @@
 import 'package:color_blindness/core/utils/shared/erorr/exceptions_service.dart';
+import 'package:color_blindness/core/utils/shared/erorr/remote_erorr.dart';
 import 'package:color_blindness/domain/entities/login_entity.dart';
 
 abstract class AuthLoginState {}
@@ -14,7 +15,7 @@ class SuccessStates extends AuthLoginState {
 }
 
 class ErorrStates extends AuthLoginState {
-  final ServiceExceptions error;
+  final String error;
   ErorrStates(this.error);
 }
 

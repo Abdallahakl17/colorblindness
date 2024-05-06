@@ -1,12 +1,13 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:http/http.dart' as http;
 import 'package:color_blindness/core/utils/shared/api_helper/api_helper.dart';
 import 'package:color_blindness/core/utils/shared/app_const.dart';
 import 'package:color_blindness/core/utils/shared/erorr/exceptions_service.dart';
 import 'package:color_blindness/core/utils/shared/erorr/remote_erorr.dart';
 import 'package:color_blindness/data/model/login_factory_model.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
-import 'package:dio/dio.dart';
 
 abstract class BaseRemoteDataSource {
   Future<LoginFactoryMoel> login(
@@ -17,36 +18,29 @@ class LoginRemoteDataSource extends BaseRemoteDataSource {
   @override
   Future<LoginFactoryMoel> login(
       {required String email, required String password}) async {
-    return ApiHelper.postData(
-            data: {'email':email, 'password':password},
-            query: {'Content-Type': 'application/json'},
-            path: ApiConst.loginUrl)
-        .then((value) {
-      if (value.statusCode == 200) {
-        print(value.data);
-        log(name: 'success :',value.data);
-        return LoginFactoryMoel.fromJson(value.data);
-      } else {
-                log(name: 'error :',value.data);
+    final response = await http.post(
+      Uri.parse('https://colorblindapi.runasp.net/api/Users/login'),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode(<String, String>{
+        'userName': email,
+        'password': password,
+      }),
+    );
 
-        throw ServiceExceptions(
-          
-            errorResponse: ErrorResponse.fromJson(value.data));
-      }
-    });
+    if (response.statusCode == 200) {
+      final responseData = jsonDecode(response.body);
+      print(responseData);
+      log('success: $responseData');
+      return LoginFactoryMoel.fromJson(responseData);
+    } else {
+      final responseData = jsonDecode(response.body);
+      log('err: $responseData');
+      throw ServiceExceptions(
+        errorResponse:
+            responseData['errorMessages']?.join(', ') ?? 'Unknown error',
+      );
+    }
   }
 }
-// Future<LoginFactoryMoel> login() async {
-//     return ApiHelper.postData(
-//             data: {'email': 'Ali@gmail', 'password': 'Ali@123'},
-//             path: ApiConst.loginUrl)
-//         .then((value) {
-//       if (value.statusCode == 200) {
-//         print(value.data);
-//         return LoginFactoryMoel.fromJson(value.data);
-//       } else {
-//         throw ServiceExceptions(
-//             errorResponse: ErrorResponse.fromJson(value.data));
-//       }
-//     });
-//   }

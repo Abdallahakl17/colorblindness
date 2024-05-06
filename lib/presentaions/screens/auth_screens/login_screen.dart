@@ -25,23 +25,15 @@ class LoginScreen extends StatelessWidget {
       child:
           BlocConsumer<AuthCubit, AuthLoginState>(listener: (context, state) {
         if (state is SuccessStates) {
-          if (state.loginEntity.isSuccess) {
-            Routes.navigateTo(context: context, widget: const MainPage());
-            print(state.loginEntity.result.token);
-          } else {
-            showToast(
-              tex: state.loginEntity.errorMessages.toString(),
-              color: States.erorr,
-            );
-            log(state.loginEntity.statusCode.toString());
-          }
-        } else if (state is ErorrStates) {
-          if (state.error.errorResponse.isSuccess) {
-            log(state.error.errorResponse.statusCode.toString());
-            // Do something if the error response is successful
-          } else {
-            print('ddds');
-          }
+          Routes.navigateToAndRemove(
+              context: context, widget: const MainPage());
+        }
+        if (state is ErorrStates) {
+          showToast(
+            tex: state.error,
+            color: States.erorr,
+          );
+          print(state.error);
         }
       }, builder: (context, state) {
         print(sl<AuthCubit>().hashCode);

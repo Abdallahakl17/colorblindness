@@ -13,8 +13,11 @@ class AuthCubit extends Cubit<AuthLoginState> {
     emit(LoadingState());
 
     final result = await loginUsecase.excute(email, password);
-    log(result.toString());
-    result.fold((e) => emit(ErorrStates(e)), (r) => emit(SuccessStates(r)));
+
+    result.fold(
+      (e) => emit(ErorrStates(e.errorResponse)),
+      (r) => emit(SuccessStates(r)),
+    );
   }
 
   IconData sufix = Icons.visibility_outlined;

@@ -9,9 +9,9 @@ class LoginFactoryMoel extends LoginEntityModel {
 
   factory LoginFactoryMoel.fromJson(Map<String, dynamic> json) {
     return LoginFactoryMoel(
-      errorMessages: json['errorMessages'] != null
-          ? List<String>.from(json['errorMessages'].map((e) => e))
-          : null,
+        errorMessages: json['errorMessages'] != null
+    ? (json['errorMessages'] as List<dynamic>).join('\n')
+    : '',
       statusCode: json['statusCode'],
       isSuccess: json['isSuccess'],
       result: LoginResult(

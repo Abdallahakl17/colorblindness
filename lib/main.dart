@@ -18,7 +18,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   ScreenUtil.init;
   Sevices().init();
-    ApiHelper.intia();
+    ApiHelper.intia ;
   runApp(
     const ScreenUtilInit(
       designSize: Size(360, 800),

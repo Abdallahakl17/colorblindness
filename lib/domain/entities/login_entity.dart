@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class LoginEntityModel extends Equatable {
   final int statusCode;
   final bool isSuccess;
-  final List<String>? errorMessages;
+  final   String ? errorMessages;
   final LoginResult result;
 
   const LoginEntityModel({

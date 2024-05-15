@@ -1,9 +1,4 @@
-import 'dart:developer';
 
-import 'package:color_blindness/data/datasource/login_data_source.dart';
-import 'package:color_blindness/data/repository/login_repo.dart';
-import 'package:color_blindness/domain/repository/base_loin_repository.dart';
-import 'package:color_blindness/domain/usecase/login_use_case.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class TextContainerTest {

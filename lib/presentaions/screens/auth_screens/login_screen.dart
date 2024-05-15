@@ -1,7 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'dart:developer';
-
 import 'package:color_blindness/core/utils/services/serv.dart';
 import 'package:color_blindness/core/utils/toast.dart';
 import 'package:color_blindness/presentaions/controller/states/auth_state.dart';

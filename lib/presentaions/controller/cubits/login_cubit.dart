@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:color_blindness/presentaions/controller/states/auth_state.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';

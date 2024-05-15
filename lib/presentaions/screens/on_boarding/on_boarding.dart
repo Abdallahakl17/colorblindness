@@ -14,6 +14,8 @@ class OnBoarding extends StatefulWidget {
   State<OnBoarding> createState() => _OnBoardingState();
 }
 
+int pageCount = 3; // assuming there are 3 children in the PageView
+
 class _OnBoardingState extends State<OnBoarding> {
   @override
   @override
@@ -21,16 +23,17 @@ class _OnBoardingState extends State<OnBoarding> {
     return Scaffold(
         body: SafeArea(
       child: PageView(
+        reverse: false,
         scrollDirection: Axis.horizontal,
-        onPageChanged: (value) {
-          if (value == 2) {
+        onPageChanged: (v) {
+          if (v == 2) {
             setState(() {
-              isLast = !isLast;
+              isLast = true;
               print('islast');
             });
           } else {
             setState(() {
-              isLast = !isLast;
+              isLast = false;
               print('noislast');
             });
           }

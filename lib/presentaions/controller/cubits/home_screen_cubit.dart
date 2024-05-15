@@ -4,7 +4,6 @@ import 'package:color_blindness/presentaions/screens/home_page/main/home_screen.
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 import '../../screens/home_page/main/profile_screens.dart';
-import '../../screens/home_page/main/search.dart';
 import '../states/home_screen_state.dart';
 
 class HomeMainCubit extends Cubit<HomeMainStates> {

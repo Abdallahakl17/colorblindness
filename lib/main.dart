@@ -1,12 +1,7 @@
 import 'dart:developer';
 
 import 'package:color_blindness/core/utils/services/serv.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:color_blindness/app.dart';
 import 'package:color_blindness/core/utils/shared/api_helper/api_helper.dart';
 import 'package:color_blindness/presentaions/controller/bloc_observ.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';

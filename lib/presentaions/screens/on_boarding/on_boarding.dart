@@ -28,12 +28,12 @@ class _OnBoardingState extends State<OnBoarding> {
         onPageChanged: (v) {
           if (v == 2) {
             setState(() {
-              isLast = true;
+              isLast = !isLast;
               print('islast');
             });
           } else {
             setState(() {
-              isLast = false;
+              isLast =!isLast;
               print('noislast');
             });
           }

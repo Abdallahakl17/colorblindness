@@ -28,7 +28,6 @@ class OnBoarding2 extends StatelessWidget {
                 ),
               ),
             ),
-            
             Expanded(
                 child: Container(
               decoration: BoxDecoration(
@@ -60,12 +59,12 @@ class OnBoarding2 extends StatelessWidget {
                       ? CustomButton(
                           heigth: 44,
                           width: double.infinity,
-                          onTapped: () => Routes.navigateTo(
+                          onTapped: () => Routes.navigateToAndRemove(
                               context: context, widget: LoginScreen()),
                           text: AppString.getStarted,
                         )
                       : InkWell(
-                          onTap: () => Routes.navigateTo(
+                          onTap: () => Routes.navigateToAndRemove(
                               context: context, widget: LoginScreen()),
                           child: const ContanierBoarding()),
                   SizedBox(
@@ -76,7 +75,7 @@ class OnBoarding2 extends StatelessWidget {
                     pageController: globalPageController,
                     count: 3,
                   ),
-                 ]),
+                ]),
               ),
             )),
           ],

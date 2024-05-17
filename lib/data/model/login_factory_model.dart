@@ -8,10 +8,11 @@ class LoginFactoryMoel extends LoginEntityModel {
       required super.result});
 
   factory LoginFactoryMoel.fromJson(Map<String, dynamic> json) {
+
     return LoginFactoryMoel(
-        errorMessages: json['errorMessages'] != null
-    ? (json['errorMessages'] as List<dynamic>).join('\n')
-    : '',
+      errorMessages: json['errorMessages'] != null
+          ? (json['errorMessages'] as List<dynamic>).join('\n')
+          : '',
       statusCode: json['statusCode'],
       isSuccess: json['isSuccess'],
       result: LoginResult(
@@ -20,9 +21,9 @@ class LoginFactoryMoel extends LoginEntityModel {
           userName: json['result']['user']['userName'],
           name: json['result']['user']['name'],
         ),
-        role: json['result']['role'],
+        role: json['result']['role']['user'],
         token: json['result']['token'],
-       ),
+      ),
     );
   }
 

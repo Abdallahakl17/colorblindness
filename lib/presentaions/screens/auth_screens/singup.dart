@@ -3,6 +3,7 @@
 import 'package:color_blindness/core/utils/services/serv.dart';
 import 'package:color_blindness/core/utils/toast.dart';
 import 'package:color_blindness/presentaions/controller/cubits/register_cubit.dart';
+import 'package:color_blindness/presentaions/controller/states/auth_register.dart';
 import 'package:color_blindness/presentaions/controller/states/auth_state.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 
@@ -24,12 +25,13 @@ class SingUpScreen extends StatelessWidget {
       create: (BuildContext context) {
         return sl<AuthRegisterCubit>();
       },
-      child: BlocConsumer<AuthRegisterCubit, AuthLoginState>(
+      child: BlocConsumer<AuthRegisterCubit, RegisterState>(
           listener: (BuildContext context, state) {
-        if (state is SuccessStates) {
-          Routes.navigateTo(context: context, widget: const MainPage());
+        if (state is SuccessStatesRegister) {
+          Routes.navigateToAndRemove(
+              context: context, widget: const MainPage());
         }
-        if (state is ErorrStates) {
+        if (state is ErorrStatesRegister) {
           showToast(
             tex: state.error,
             color: States.erorr,
@@ -69,15 +71,14 @@ class SingUpScreen extends StatelessWidget {
                       height: 12.h,
                     ),
                     CustomTextField(
-                                          obscureText: true,
-
+                        obscureText: true,
                         controller: passwordContoller,
                         labelText: AppString.password),
                     SizedBox(
                       height: 16.h,
                     ),
                     CustomTextField(
-                    obscureText: true,
+                        obscureText: true,
                         controller:
                             confirmPasswordContoller, // Use confirm password controller
                         labelText: AppString.confirmPassword),
@@ -85,7 +86,7 @@ class SingUpScreen extends StatelessWidget {
                       height: 24.h,
                     ),
                     ConditionalBuilder(
-                      condition: state is! LoadingState,
+                      condition: state is! LoadingStateRegister,
                       builder: (context) {
                         return CustomButton(
                           onTapped: () async {
@@ -105,7 +106,7 @@ class SingUpScreen extends StatelessWidget {
                               }
                             }
                           },
-                          text: AppString.login,
+                          text: AppString.sinUp,
                           radius: 20,
                           heigth: 56.h,
                           width: double.infinity.w,

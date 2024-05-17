@@ -4,7 +4,7 @@ class LoginEntityModel extends Equatable {
   final int statusCode;
   final bool isSuccess;
   final   String ? errorMessages;
-  final LoginResult result;
+  final LoginResult ?result;
 
   const LoginEntityModel({
     required this.statusCode,

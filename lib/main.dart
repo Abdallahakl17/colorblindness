@@ -13,8 +13,7 @@ void main() async {
   Bloc.observer = MyBlocObserver();
   ScreenUtil.init;
   Sevices().init();
-    ApiHelper.intia ;
-  runApp(
+   runApp(
     const ScreenUtilInit(
       designSize: Size(360, 800),
       useInheritedMediaQuery: true,

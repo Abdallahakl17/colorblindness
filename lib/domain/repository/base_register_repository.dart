@@ -1,9 +1,9 @@
 import 'package:color_blindness/core/utils/shared/erorr/exceptions_service.dart';
-import 'package:color_blindness/domain/entities/login_entity.dart';
-import 'package:dartz/dartz.dart';
+import 'package:color_blindness/data/model/register_factory.dart';
+ import 'package:dartz/dartz.dart';
 
 abstract class BaseRegisterRepo {
  
-  Future<Either<ServiceExceptions, LoginEntityModel>> register(
+  Future<Either<ServiceExceptions, RegisterFactory>> register(
       String email, String password, String name);
 }

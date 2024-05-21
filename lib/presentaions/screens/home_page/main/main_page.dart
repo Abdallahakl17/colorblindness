@@ -7,6 +7,8 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      ScreenUtil.init;
+
     return BlocProvider<HomeMainCubit>(
         create: (BuildContext context) => HomeMainCubit(),
         child: BlocConsumer<HomeMainCubit, HomeMainStates>(

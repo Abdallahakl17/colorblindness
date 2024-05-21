@@ -6,6 +6,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      ScreenUtil.init;
+
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

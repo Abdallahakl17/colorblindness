@@ -39,12 +39,14 @@ class ConMainIconsHome extends StatelessWidget {
               SizedBox(
                 width: 11.w,
               ),
-              Text(
-                text,
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium!
-                    .copyWith(fontWeight: FontWeight.w700),
+              Expanded(
+                child: Text(
+                  text,
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayMedium!
+                      .copyWith(fontWeight: FontWeight.w700),
+                ),
               )
             ],
           )

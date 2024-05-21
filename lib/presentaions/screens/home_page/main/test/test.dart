@@ -1,4 +1,4 @@
-
+import 'package:color_blindness/presentaions/screens/home_page/main/test/cambrigge-test.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class TextContainerTest {
@@ -38,7 +38,10 @@ class Test extends StatelessWidget {
             itemBuilder: (context, index) => CustomTestContainer(
               imag: texts[index].imag,
               text: texts[index].tex,
-              onPressed: () {},
+              onPressed: () {
+                Routes.navigateTo(
+                    context: context, widget: const CambridgeScreen());
+              },
             ),
             itemCount: texts.length,
             separatorBuilder: (context, index) => SizedBox(

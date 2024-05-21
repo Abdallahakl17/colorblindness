@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
       child:
           BlocConsumer<AuthCubit, AuthLoginState>(listener: (context, state) {
         if (state is SuccessStates) {
-          Routes.navigateToAndRemove(
+          Routes.navigateTo (
               context: context, widget: const MainPage());
         }
         if (state is ErorrStates) {

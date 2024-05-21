@@ -44,7 +44,7 @@ ThemeData getDataThem() => ThemeData(
         displayMedium: GoogleFonts.poppins(
             color: AppColor.blackColor,
             fontSize: 12.sp,
-            fontWeight: FontWeight.w500),
+            fontWeight: FontWeight.w400),
         titleMedium: GoogleFonts.poppins(
             color: AppColor.igthColor,
             fontSize: 12.sp,

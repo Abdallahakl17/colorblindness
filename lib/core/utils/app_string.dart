@@ -61,4 +61,6 @@ class AppString {
       'Your new password must be unique from those previously used.';
   static const String doYouKnow =
       'Do You Know What Color Blindness is ?';
+  static const String selectItemIn3Sec =
+      'Note: Please Selest the correct Option you see in the image please try to choose within 3 sec';
 }

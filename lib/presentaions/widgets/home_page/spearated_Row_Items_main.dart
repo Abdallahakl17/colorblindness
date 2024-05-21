@@ -18,7 +18,7 @@ class SpearatedRowItems extends StatelessWidget {
             elevation: 5,
             child: Container(
               width: 169.w,
-              height: 153.h,
+              height: 156.h,
               decoration: const BoxDecoration(color: AppColor.whiteColor),
               child: Column(
                 children: [
@@ -33,13 +33,12 @@ class SpearatedRowItems extends StatelessWidget {
                     child: SizedBox(
                       width: double.infinity,
                       child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 7.h, horizontal: 13.w),
+                        padding: EdgeInsets.symmetric(
+                            vertical: 7.h, horizontal: 13.w),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                               
                               child: Text(
                                 "Color Blindness case  .. ",
                                 overflow: TextOverflow.ellipsis,
@@ -49,8 +48,11 @@ class SpearatedRowItems extends StatelessWidget {
                                     .copyWith(fontWeight: FontWeight.w600),
                               ),
                             ),
-                            Text("Lorem ipsum dolor \nsit amet",
-                                style: Theme.of(context).textTheme.titleMedium),
+                            Expanded(
+                              child: Text("Lorem ipsum dolor \nsit amet",
+                                  style:
+                                      Theme.of(context).textTheme.titleMedium),
+                            ),
                           ],
                         ),
                       ),

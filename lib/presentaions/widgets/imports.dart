@@ -31,7 +31,7 @@ export 'package:flutter_bloc/flutter_bloc.dart';
  export 'package:color_blindness/presentaions/screens/on_boarding/on_boarding.dart';
 export 'package:color_blindness/presentaions/controller/cubits/login_cubit.dart';
 export 'package:color_blindness/presentaions/screens/home_page/main/main_page.dart';
-export  'package:color_blindness/presentaions/screens/home_page/test.dart';
+export  'package:color_blindness/presentaions/screens/home_page/main/test/test.dart';
 export  'package:color_blindness/presentaions/widgets/home_page/con_icons_main_page.dart';
 export  'package:color_blindness/presentaions/widgets/home_page/container_home_page.dart';
 export  'package:color_blindness/presentaions/widgets/home_page/spearated_Row_Items_main.dart';

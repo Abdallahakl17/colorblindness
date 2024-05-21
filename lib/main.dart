@@ -42,11 +42,10 @@ class _MyAppState extends State<MyApp> {
     double screenHeight = screenSize.height;
     log(screenHeight.toString());
     log(screenWidth.toString());
-    print(sl<LoginUsecase>().hashCode);
-    return MaterialApp(
+     return MaterialApp(
       theme: getDataThem(),
       debugShowCheckedModeBanner: false,
-      home: const OnBoarding(),
+      home: const MainPage(),
     );
   }
 }

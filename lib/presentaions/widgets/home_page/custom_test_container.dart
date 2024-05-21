@@ -37,33 +37,35 @@ class CustomTestContainer extends StatelessWidget {
             ),
             const Spacer(),
             Container(
+              width: 37.w,
+              height: 37.h,
               decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColor.onBoardingColor.withOpacity(0.5),
-                    spreadRadius: -5,
-                    blurRadius: 7,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-                color: AppColor.buttonsColor,
-                gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    AppColor.buttonsArrowColor,
-                    AppColor.containerTestColor,
-                    AppColor.containerDotslinear2Color,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColor.onBoardingColor.withOpacity(0.5),
+                      spreadRadius: -5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 4),
+                    ),
                   ],
-                ),
-                borderRadius:
-                    BorderRadius.circular(ScreenUtil().setWidth(12).w),
-              ),
+                  color: AppColor.buttonsColor,
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      AppColor.buttonsArrowColor,
+                      AppColor.containerTestColor,
+                      AppColor.containerDotslinear2Color,
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(
+                      Radius.circular(ScreenUtil().setWidth(12.w)))),
               child: IconButton(
                 onPressed: onPressed,
                 icon: const Icon(
                   Icons.navigate_next_sharp,
                   color: AppColor.titleBoardgingColor,
+                  size: 22,
                 ),
               ),
             ),

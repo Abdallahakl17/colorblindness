@@ -9,6 +9,8 @@ class ContainerMainScreenView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      ScreenUtil.init;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -22,7 +24,7 @@ class ContainerMainScreenView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 121.w,
+                width: 120.w,
               ),
               SizedBox(
                   width: 146.w,
@@ -31,19 +33,22 @@ class ContainerMainScreenView extends StatelessWidget {
                     AppString.doYouKnow,
                     style: Theme.of(context).textTheme.titleSmall,
                   )),
-              CircleAvatar(
-                radius: 15,
-                backgroundColor: AppColor.continerMainScreen,
-                child: IconButton(
-                    onPressed: () {
-                      Routes.navigateTo(
-                          context: context, widget: Test());
-                    },
-                    icon: const Icon(
-                      Icons.arrow_forward,
-                      color: AppColor.whiteColor,
-                      size: 15,
-                    )),
+              Padding(
+                padding:   EdgeInsets.symmetric(horizontal: 5.w),
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: AppColor.continerMainScreen,
+                  child: IconButton(
+                      onPressed: () {
+                        Routes.navigateTo(
+                            context: context, widget: Test());
+                      },
+                      icon: const Icon(
+                        Icons.arrow_forward,
+                        color: AppColor.whiteColor,
+                        size: 15,
+                      )),
+                ),
               ),
             ],
           ),
@@ -55,7 +60,7 @@ class ContainerMainScreenView extends StatelessWidget {
               clipBehavior: Clip.none,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30.r)),
-              height: 128.h,
+              height: 127.h,
               width: 121.w,
               child: Image.asset(
                 AppImages.imagegirlOutline,

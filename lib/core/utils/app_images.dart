@@ -13,6 +13,11 @@ class AppImages {
   static const String imageEyeIcon = "assets/images/eyesicon.png";
   static const String imageGlassIcon = "assets/images/glassicon.png";
   static const String imagecont = "assets/images/cont.png";
+  static const String imageArrowTop = "assets/images/arrowtop.png";
+  static const String imageArrowLeft = "assets/images/arrowLeft.png";
+  static const String imageArrowBottom = "assets/images/arrowBottom.png";
+  static const String imageArrowRigth = "assets/images/arrowRigth.png";
+  static const String imageCTest = "assets/images/cTest.png";
   static const String ishiharaTest = "assets/images/IshiharaTest.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";

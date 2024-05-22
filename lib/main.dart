@@ -11,7 +11,6 @@ void main() async {
   await Future.delayed(const Duration(seconds: 2));
   FlutterNativeSplash.remove();
   Bloc.observer = MyBlocObserver();
-  ScreenUtil.init;
   Sevices().init();
    runApp(
     const ScreenUtilInit(
@@ -37,6 +36,8 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+      ScreenUtil.init;
+
     Size screenSize = MediaQuery.of(context).size;
     double screenWidth = screenSize.width;
     double screenHeight = screenSize.height;

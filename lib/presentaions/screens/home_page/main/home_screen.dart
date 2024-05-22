@@ -1,3 +1,5 @@
+import 'package:color_blindness/presentaions/widgets/home_page/show-dialog-camera.dart';
+
 import '../../../widgets/imports.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,96 +37,11 @@ class HomeScreen extends StatelessWidget {
                   imag: AppImages.imageCameraIcon,
                   text: AppString.camera,
                   onTap: () {
-                    showDialog(barrierDismissible: false,
+                    showDialog(
+                      barrierDismissible: false,
                       context: context,
                       builder: (context) {
-                        return Stack(
-                          alignment: Alignment.center,
-                          clipBehavior: Clip
-                              .none, // Ensure the Positioned widget can be outside the bounds of the Stack
-                          children: [
-                            Container(
-                              width: 271.w,
-                              height: 238.h,
-                              decoration: BoxDecoration(
-                                color: AppColor.whiteColor,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(20.r),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  // Add space to prevent overlapping with the image
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      top: 64.h,
-                                    ),
-                                    child: SizedBox(
-                                      width: 222.w,
-                                      height: 66.h,
-                                      child: Stack(
-                                        children: [
-                                          Center(
-                                            child: Text(
-                                              AppString.cameraText,
-                                              textAlign: TextAlign.center,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleSmall!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  const Spacer(),
-                                  const ButtonsDialog(),
-                                  SizedBox(height: 24.h), // Add bottom padding
-                                ],
-                              ),
-                            ),
-                            Positioned(
-                              bottom: MediaQuery.of(context).size.height /
-                                  1.73.h, // Position the image above the dialog box
-                              child: Container(
-                                width: 72.w,
-                                height: 72.h,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color:
-                                          AppColor.blackColor.withOpacity(0.15),
-                                      spreadRadius: 3.r,
-                                      blurRadius: 9.r,
-                                      offset: const Offset(0, 4),
-                                    ),
-                                  ],
-                                  borderRadius: BorderRadius.circular(20.r),
-                                  color: AppColor.whiteColor,
-                                ),
-                                child: Image.asset(AppImages.imageCemraDilog),
-                              ),
-                            ),
-                            Positioned(
-                              right: 50.w,
-                              bottom:
-                                  MediaQuery.of(context).size.height / 1.82.h,
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                                child: IconButton(
-                                  icon: const Icon(Icons.close,
-                                      color: Colors.black),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                ),
-                              ),
-                            ),
-                          ],
-                        );
+                        return const ShowDialog();
                       },
                     );
                   },
@@ -172,28 +89,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ButtonsDialog extends StatelessWidget {
-  const ButtonsDialog({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColor.buttonsColor,
-        borderRadius: BorderRadius.circular(20.r),
-      ),
-      width: 150.w,
-      height: 42.h,
-      child: Center(
-        child: Text(
-          AppString.start,
-          style: Theme.of(context).textTheme.bodyLarge,
-        ),
       ),
     );
   }

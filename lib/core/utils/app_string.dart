@@ -20,6 +20,7 @@ class AppString {
   static const String userName = 'UserName';
   static const String getStarted = 'Get Started';
   static const String skip = 'Skip';
+  static const String start = 'Start';
   static const String enterYourEmail = 'Enter your email';
   static const String enterYourPassword = 'Enter your$password';
   static const String back = 'Back';
@@ -61,6 +62,8 @@ class AppString {
       'Your new password must be unique from those previously used.';
   static const String doYouKnow =
       'Do You Know What Color Blindness is ?';
+  static const String cameraText =
+      ' This Camera helps people who are color blind see the color around them';
   static const String selectItemIn3Sec =
       'Note: Please Selest the correct Option you see in the image please try to choose within 3 sec';
 }

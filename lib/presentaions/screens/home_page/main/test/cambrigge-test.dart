@@ -1,5 +1,5 @@
- import 'package:color_blindness/presentaions/widgets/imports.dart';
- 
+import 'package:color_blindness/presentaions/widgets/imports.dart';
+
 class CambridgeScreen extends StatelessWidget {
   const CambridgeScreen({super.key});
 

@@ -8,6 +8,7 @@ class AppColor {
   static const Color titleBoardgingColor = Color(0xFF6A707C);
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color igthColor = Color(0xFF263238);
+  static const Color closeColor = Color(0xFF10335D);
   static const Color continerMainScreen = Color(0xFFBED9F6);
   static const Color linearSearchGradient = Color(0xFFC6D7EB);
 

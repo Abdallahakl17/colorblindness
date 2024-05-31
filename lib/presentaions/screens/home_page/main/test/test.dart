@@ -1,4 +1,5 @@
-import 'package:color_blindness/presentaions/screens/home_page/main/test/cambrigge-test.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambridgetest-.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambrigge-test-items.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class TextContainerTest {
@@ -40,7 +41,7 @@ class Test extends StatelessWidget {
               text: texts[index].tex,
               onPressed: () {
                 Routes.navigateTo(
-                    context: context, widget: const CambridgeScreen());
+                    context: context, widget: const CambridgeTest());
               },
             ),
             itemCount: texts.length,

@@ -18,7 +18,10 @@ class AppImages {
   static const String imageArrowLeft = "assets/images/arrowLeft.png";
   static const String imageArrowBottom = "assets/images/arrowBottom.png";
   static const String imageArrowRigth = "assets/images/arrowRigth.png";
-  static const String imageCTest = "assets/images/cTest.png";
+  static const String imageCTest = "assets/images/ctest1.png";
+  static const String imageCTest2 = "assets/images/cambridgetest2.png";
+  static const String imageCTest3 = "assets/images/cambridgetest3.png";
+  static const String imageCTest4 = "assets/images/cambridgetest4.png";
   static const String ishiharaTest = "assets/images/IshiharaTest.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";

@@ -11,6 +11,8 @@ class AppColor {
   static const Color closeColor = Color(0xFF10335D);
   static const Color continerMainScreen = Color(0xFFBED9F6);
   static const Color linearSearchGradient = Color(0xFFC6D7EB);
+  static const Color linearProgress = Color(0xFFC7D3EB);
+  static const Color ligthBlue = Color(0xFF47B2FF);
 
   static const Color buttonsColor = Color(0xFFC2E6FF);
   static const Color buttonsArrowColor = Color.fromARGB(255, 182, 199, 233);

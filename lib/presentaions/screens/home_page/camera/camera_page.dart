@@ -16,67 +16,80 @@ class EditImagePage extends StatefulWidget {
 class _EditImagePageState extends State<EditImagePage> {
   String colorName = '';
 
-Future<void> _uploadImage() async {
-  final uri = Uri.parse('http://192.168.1.8:8000/predict/');
-  final request = http.MultipartRequest('POST', uri)
-    ..files.add(await http.MultipartFile.fromPath('file', widget.image.path));
+  Future<void> _uploadImage() async {
+    final uri = Uri.parse('http://192.168.1.8:8000/predict/');
+    final request = http.MultipartRequest('POST', uri)
+      ..files.add(await http.MultipartFile.fromPath('file', widget.image.path));
 
-  try {
-    final response = await request.send();
-    if (response.statusCode == 200) {
-      final responseBody = await response.stream.bytesToString();
-      final jsonResponse = json.decode(responseBody);
+    try {
+      final response = await request.send();
+      if (response.statusCode == 200) {
+        final responseBody = await response.stream.bytesToString();
+        final jsonResponse = json.decode(responseBody);
+        setState(() {
+          colorName = jsonResponse['predicted_color']; // Access the correct key
+        });
+      } else {
+        setState(() {
+          colorName = 'Error: ${response.reasonPhrase}';
+          print(colorName);
+        });
+      }
+    } catch (e) {
       setState(() {
-        colorName = jsonResponse['predicted_color']; // Access the correct key
-      });
-    } else {
-      setState(() {
-        colorName = 'Error: ${response.reasonPhrase}';
+        colorName = 'Error: $e';
         print(colorName);
       });
     }
-  } catch (e) {
-    setState(() {
-      colorName = 'Error: $e';
-      print(colorName);
-    });
   }
-}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detect color'),
+        title: Text(
+          'Detected Color',
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
       ),
       body: Padding(
-        padding:   const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            Expanded(flex: 3,
-              child: Image.file(widget.image),
-            ),                    SizedBox(height: 32.h,),
-
-          
-            ElevatedButton(
-              onPressed: _uploadImage,
-              child: const Text('Upload Image'),
-            ),
-            if (colorName.isNotEmpty)
+        padding: const EdgeInsets.all(24),
+        child: Center(
+          child: Column(
+            children: [
               Expanded(
-                child: Column(
-                  
-                  children: [
-                    const Spacer(),
-                    Padding(
-                      padding:   EdgeInsets.all(8.w),
-                      child: Text('Color Name : $colorName',style: Theme.of(context).textTheme.bodyLarge,),
- 
-                  ],
-                ),
+                flex: 3,
+                child: Image.file(widget.image),
               ),
-            SizedBox(height: 10.h,)
-          ],
+              SizedBox(
+                height: 50.h,
+              ),
+              CustomButton(
+                text: 'Upload Image',
+                onTapped: _uploadImage,
+                width: 222.w,
+                heigth: 55.h,
+              ),
+              if (colorName.isNotEmpty)
+                Expanded(
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      Padding(
+                        padding: EdgeInsets.all(8.w),
+                        child: Text(
+                          'Detected Color: $colorName',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              SizedBox(
+                height: 10.h,
+              )
+            ],
+          ),
         ),
       ),
     );

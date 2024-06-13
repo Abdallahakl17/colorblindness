@@ -5,20 +5,22 @@ import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class ResultScreen extends StatelessWidget {
   final List<String> correctAnswers;
+  final List<String> falseAnswers;
   final List<String> userAnswers;
   final List<String> images;
 
-  const ResultScreen(
-      {Key? key,
-      required this.correctAnswers,
-      required this.userAnswers,
-      required this.images})
-      : super(key: key);
+  const ResultScreen({
+    Key? key,
+    required this.correctAnswers,
+    required this.falseAnswers,
+    required this.userAnswers,
+    required this.images,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.sizeOf(context).height;
+    var width = MediaQuery.sizeOf(context).width;
 
     return Scaffold(
       appBar: AppBar(
@@ -47,6 +49,18 @@ class ResultScreen extends StatelessWidget {
     }
     double accuracy = (correctCount / correctAnswers.length) * 100;
 
+    String colorTypeStatus;
+    if (accuracy == 100) {
+      colorTypeStatus = "No color blindness";
+    } else if (accuracy >= 50) {
+      colorTypeStatus = "Possible Red-Green ";
+     
+    } else if (accuracy >= 50) {
+      colorTypeStatus = "Red-Green";
+    }else {
+      colorTypeStatus = "Likely color blindness";
+    }
+
     return Material(
       elevation: 10,
       borderRadius: BorderRadius.circular(25.r),
@@ -61,23 +75,29 @@ class ResultScreen extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    'Color-Type: ',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                    'Color Blindness-Type: ',
+                    style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w600),
                   ),
-                  Text(' Red-Green  '),
+                  Text(
+                    colorTypeStatus,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                         
+                  ),
                 ],
               ),
               SizedBox(height: height * 0.02),
               _buildRow(
                   text: "Correct answers:",
-                  value: " $correctCount/${correctAnswers.length}",
+                  value: " ${correctAnswers.length  -falseAnswers.length}",
                   textColor: Colors.green,
                   height: height),
               SizedBox(height: height * 0.02),
               _buildRow(
-                  text: "Accuracy:",
-                  value: " ${accuracy.toStringAsFixed(2)}%",
-                  textColor: Colors.black,
+                  text: "False answers:",
+                  value: " ${falseAnswers.length}",
+                  textColor: Colors.red,
                   height: height),
               SizedBox(height: height * 0.02),
               _buildPercentageRow(accuracy / 100, height: height),
@@ -89,11 +109,12 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRow(
-      {required String text,
-      String? value,
-      Color? textColor,
-      required double height}) {
+  Widget _buildRow({
+    required String text,
+    String? value,
+    Color? textColor,
+    required double height,
+  }) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -149,6 +170,7 @@ class ResultScreen extends StatelessWidget {
                 imagePath: images[index],
                 correctAnswer: correctAnswers[index],
                 userAnswer: userAnswers[index],
+                isCorrect: correctAnswers[index] == userAnswers[index],
               ),
             ),
           ),
@@ -162,25 +184,23 @@ class ResultScreen extends StatelessWidget {
     required String imagePath,
     required String correctAnswer,
     required String userAnswer,
+    required bool isCorrect,
   }) {
     return Row(
       children: [
         Padding(
-           padding: EdgeInsets.symmetric(vertical: 8.h),
-          child: 
-            CircleAvatar(
-              radius: 35.r,
-              backgroundImage: AssetImage(imagePath),
-            ),
-          
+          padding: EdgeInsets.symmetric(vertical: 8.h),
+          child: CircleAvatar(
+            radius: 35.r,
+            backgroundImage: AssetImage(imagePath),
+          ),
         ),
         SizedBox(width: 10.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildRow(
-                text: "Correct answer :", value: correctAnswer, height: 0),
-            _buildRow(text: "Your answer :", value: userAnswer, height: 0),
+            _buildRow(text: "Correct answer: ", value: correctAnswer, height: 0,   ),
+            _buildRow(text: "Your answer:      ", value: userAnswer, height: 0,textColor: AppColor.dotsColors   ),
           ],
         ),
       ],

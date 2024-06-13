@@ -13,6 +13,7 @@ class AppColor {
   static const Color linearSearchGradient = Color(0xFFC6D7EB);
   static const Color linearProgress = Color(0xFFC7D3EB);
   static const Color ligthBlue = Color(0xFF47B2FF);
+  static const Color  colorBorderCircleButton = Color(0xFF6E68A7);
 
   static const Color buttonsColor = Color(0xFFC2E6FF);
   static const Color buttonsArrowColor = Color.fromARGB(255, 182, 199, 233);

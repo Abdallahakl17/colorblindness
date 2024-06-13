@@ -79,13 +79,19 @@ class CambridgeCubit extends Cubit<CambridgeState> {
       if (state.currentPage < state.images.length - 1) {
         pageController.nextPage(
           duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOut,
+          curve: Curves.fastEaseInToSlowEaseOut,
         );
         emit(state.copyWith(
           currentPage: state.currentPage + 1,
           hasAnswered: false,
         ));
       } else {
+        final falseAnswers = <String>[];
+        for (int i = 0; i < state.correctAnswers.length; i++) {
+          if (state.correctAnswers[i] != state.userAnswers[i]) {
+            falseAnswers.add(state.userAnswers[i]);
+          }
+        }
         emit(state.copyWith(isTestCompleted: true));
         Navigator.pushReplacement(
           context,
@@ -94,6 +100,7 @@ class CambridgeCubit extends Cubit<CambridgeState> {
               correctAnswers: state.correctAnswers,
               userAnswers: state.userAnswers,
               images: state.images,
+              falseAnswers: falseAnswers,
             ),
           ),
         );

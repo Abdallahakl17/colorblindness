@@ -8,7 +8,11 @@ class ResultScreen extends StatelessWidget {
   final List<String> userAnswers;
   final List<String> images;
 
-  const ResultScreen({Key? key, required this.correctAnswers, required this.userAnswers, required this.images})
+  const ResultScreen(
+      {Key? key,
+      required this.correctAnswers,
+      required this.userAnswers,
+      required this.images})
       : super(key: key);
 
   @override
@@ -18,12 +22,6 @@ class ResultScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(Icons.arrow_back_ios_new),
-        ),
         title: const Text("Result"),
       ),
       body: Padding(
@@ -60,8 +58,27 @@ class ResultScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildRow(text: "Correct answers:", value: "$correctCount/${correctAnswers.length}", textColor: Colors.green, height: height),
-              _buildRow(text: "Accuracy:", value: "${accuracy.toStringAsFixed(2)}%", textColor: Colors.black, height: height),
+              Row(
+                children: [
+                  Text(
+                    'Color-Type: ',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  Text(' Red-Green  '),
+                ],
+              ),
+              SizedBox(height: height * 0.02),
+              _buildRow(
+                  text: "Correct answers:",
+                  value: " $correctCount/${correctAnswers.length}",
+                  textColor: Colors.green,
+                  height: height),
+              SizedBox(height: height * 0.02),
+              _buildRow(
+                  text: "Accuracy:",
+                  value: " ${accuracy.toStringAsFixed(2)}%",
+                  textColor: Colors.black,
+                  height: height),
               SizedBox(height: height * 0.02),
               _buildPercentageRow(accuracy / 100, height: height),
               SizedBox(height: height * 0.02),
@@ -72,7 +89,11 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRow({required String text, String? value, Color? textColor, required double height}) {
+  Widget _buildRow(
+      {required String text,
+      String? value,
+      Color? textColor,
+      required double height}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -93,7 +114,10 @@ class ResultScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildRow(text: "Correct Percentage:", value: "${(percent * 100).toStringAsFixed(2)}%", height: height),
+        _buildRow(
+            text: "Correct Percentage:",
+            value: "${(percent * 100).toStringAsFixed(2)}%",
+            height: height),
         SizedBox(height: height * 0.02),
         LinearPercentIndicator(
           barRadius: Radius.circular(10.r),
@@ -141,15 +165,21 @@ class ResultScreen extends StatelessWidget {
   }) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: 35.r,
-          backgroundImage: AssetImage(imagePath),
+        Padding(
+           padding: EdgeInsets.symmetric(vertical: 8.h),
+          child: 
+            CircleAvatar(
+              radius: 35.r,
+              backgroundImage: AssetImage(imagePath),
+            ),
+          
         ),
         SizedBox(width: 10.w),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildRow(text: "Correct answer :", value: correctAnswer, height: 0),
+            _buildRow(
+                text: "Correct answer :", value: correctAnswer, height: 0),
             _buildRow(text: "Your answer :", value: userAnswer, height: 0),
           ],
         ),

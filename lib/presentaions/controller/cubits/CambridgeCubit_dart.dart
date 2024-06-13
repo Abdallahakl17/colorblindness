@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result.dart';
+import 'package:color_blindness/core/utils/shared/shared.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
 import 'package:equatable/equatable.dart';
 import 'package:color_blindness/core/utils/app_images.dart';
@@ -48,7 +48,7 @@ class CambridgeState extends Equatable {
         correctAnswers,
         userAnswers,
         isTestCompleted,
-        hasAnswered
+        hasAnswered,
       ];
 }
 
@@ -66,6 +66,7 @@ class CambridgeCubit extends Cubit<CambridgeState> {
           correctAnswers: ['right', 'left', 'bottom', 'top'],
           userAnswers: ['', '', '', ''],
         ));
+  var pageController = PageController(initialPage: 0);
 
   void onSelectAnswer(int index, String answer) {
     final newUserAnswers = List<String>.from(state.userAnswers);
@@ -76,8 +77,14 @@ class CambridgeCubit extends Cubit<CambridgeState> {
   void onNext(BuildContext context) {
     if (state.hasAnswered) {
       if (state.currentPage < state.images.length - 1) {
+        pageController.nextPage(
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
         emit(state.copyWith(
-            currentPage: state.currentPage + 1, hasAnswered: false));
+          currentPage: state.currentPage + 1,
+          hasAnswered: false,
+        ));
       } else {
         emit(state.copyWith(isTestCompleted: true));
         Navigator.pushReplacement(
@@ -94,16 +101,21 @@ class CambridgeCubit extends Cubit<CambridgeState> {
     } else {
       // Show a message to the user to select an answer
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please select an answer ')),
+        const SnackBar(content: Text('Please select an answer')),
       );
     }
   }
-  
-  
+
   void onBack() {
     if (state.currentPage > 0) {
+      pageController.previousPage(
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
       emit(state.copyWith(
-          currentPage: state.currentPage - 1, hasAnswered: true));
+        currentPage: state.currentPage - 1,
+        hasAnswered: state.userAnswers[state.currentPage - 1].isNotEmpty,
+      ));
     }
   }
 }

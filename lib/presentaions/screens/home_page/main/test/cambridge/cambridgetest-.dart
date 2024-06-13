@@ -2,8 +2,8 @@ import 'package:color_blindness/presentaions/controller/cubits/CambridgeCubit_da
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambrigge-test-items.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/material.dart';
 
 class CambridgeTest extends StatelessWidget {
   const CambridgeTest({super.key});
@@ -21,7 +21,7 @@ class CambridgeTest extends StatelessWidget {
                 Expanded(
                   child: PageView.builder(
                     reverse: true,
-                    controller: PageController(initialPage: state.currentPage),
+                    controller: context.read<CambridgeCubit>().pageController,
                     onPageChanged: (index) {
                       context
                           .read<CambridgeCubit>()

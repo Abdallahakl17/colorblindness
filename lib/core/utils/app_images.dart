@@ -23,6 +23,10 @@ class AppImages {
   static const String imageCTest3 = "assets/images/cambridgetest3.png";
   static const String imageCTest4 = "assets/images/cambridgetest4.png";
   static const String ishiharaTest = "assets/images/IshiharaTest.png";
+  static const String ishiharaTest1 = "assets/images/2.png";
+  static const String ishiharaTest2 = "assets/images/27.png";
+  static const String ishiharaTest3 = "assets/images/42.png";
+  static const String ishiharaTest4 = "assets/images/74.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";
   static const String cambridgeColorTest =

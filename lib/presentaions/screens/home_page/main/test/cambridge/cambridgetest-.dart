@@ -18,7 +18,7 @@ class CambridgeTest extends StatelessWidget {
           builder: (context, state) {
             return Column(
               children: [
-                Expanded(
+                Expanded(flex: 4,
                   child: PageView.builder(
                     reverse: true,
                     controller: context.read<CambridgeCubit>().pageController,
@@ -38,28 +38,31 @@ class CambridgeTest extends StatelessWidget {
                     },
                   ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CustomButton(
-                        text: AppString.back,
-                        width: 149.w,
-                        heigth: 43.h,
-                        onTapped: context.read<CambridgeCubit>().onBack,
-                      ),
-                      CustomButton(
-                        text: AppString.next,
-                        width: 149.w,
-                        heigth: 43.h,
-                        onTapped: () =>
-                            context.read<CambridgeCubit>().onNext(context),
-                      ),
-                    ],
-                  ),
-                ),
+                Expanded(
+                  child: Padding(
+                                  padding:
+                                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      CustomButton(
+                                        text: AppString.back,
+                                        width: 149.w,
+                                        heigth: 43.h,
+                                        onTapped: context.read<CambridgeCubit>().onBack,
+                                      ),
+                                      CustomButton(
+                                        text: AppString.next,
+                                        width: 149.w,
+                                        heigth: 43.h,
+                                        onTapped: () =>
+                                            context.read<CambridgeCubit>().onNext(context),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                )
+                ,
               ],
             );
           },

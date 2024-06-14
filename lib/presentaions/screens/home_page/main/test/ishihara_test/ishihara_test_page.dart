@@ -1,19 +1,79 @@
+import 'package:color_blindness/presentaions/controller/cubits/ishihara_cubit.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/ishihara_test/ishihara_test_items.dart';
+import 'package:color_blindness/presentaions/widgets/imports.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 class IshiharaTestPage extends StatelessWidget {
-  const IshiharaTestPage({super.key});
+  final List<String> images = [
+    AppImages.ishiharaTest1,
+    AppImages.ishiharaTest2,
+    AppImages.ishiharaTest3,
+    AppImages.ishiharaTest4
+  ];
+
+  final List<String> correctAnswers = ['2', '27', '42', '74'];
+
+  IshiharaTestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('IshiharaTestPage'),
-        centerTitle: true,
+    return BlocProvider(
+      create: (context) => IshihraCubit(
+        images,
+        correctAnswers,
       ),
-      body: const Center(
-        child: Text(
-          'IshiharaTestPage is working',
-          style: TextStyle(fontSize: 20),
+      child: Scaffold(
+        appBar: AppBar(),
+        body: BlocBuilder<IshihraCubit, IshiraState>(
+          builder: (context, state) {
+            return Column(
+              children: [
+                Expanded(flex: 4,
+                  child: PageView.builder(
+                    controller: context.read<IshihraCubit>().pageController,
+                    itemCount: state.images.length,
+                    itemBuilder: (context, index) {
+                      return IshiharaScreenItems(
+                        image: state.images[index],
+                        onSelect: (answer) {
+                          context
+                              .read<IshihraCubit>()
+                              .onSelectAnswer(index, answer);
+                        },
+                      );
+                    },
+                  ),
+                ),
+                Expanded(flex: 1,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        CustomButton(
+                          text: AppString.back,
+                          width: 149.w,
+                          heigth: 43.h,
+                          onTapped: context.read<IshihraCubit>().onBack,
+                        ),
+                        CustomButton(
+                          text: AppString.next,
+                          width: 149.w,
+                          heigth: 43.h,
+                          onTapped: () =>
+                              context.read<IshihraCubit>().onNext(context),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );

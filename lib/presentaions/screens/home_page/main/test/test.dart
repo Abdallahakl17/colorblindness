@@ -1,6 +1,5 @@
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambridgetest-.dart';
-import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambrigge-test-items.dart';
-import 'package:color_blindness/presentaions/screens/home_page/main/test/framsworth_lanntern_test/framsworth_lanntern_test_page.dart';
+ import 'package:color_blindness/presentaions/screens/home_page/main/test/framsworth_lanntern_test/framsworth_lanntern_test_page.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/ishihara_test/ishihara_test_page.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/kids_color_blind_test/kids_color_blind_test_page.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
@@ -24,7 +23,7 @@ class Test extends StatelessWidget {
           tex: AppString.ishiharaTest,
           onPressed: () {
             Routes.navigateTo(
-                context: context, widget: const IshiharaTestPage());
+                context: context, widget:   IshiharaTestPage());
           }),
       TextContainerTest(
           imag: AppImages.framsworthTest,

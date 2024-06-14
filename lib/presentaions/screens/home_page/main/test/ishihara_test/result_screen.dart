@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
@@ -17,15 +18,15 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.sizeOf(context).height;
-    var width = MediaQuery.sizeOf(context).width;
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Result"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(19.0.r),
+        padding: const EdgeInsets.all(19.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,9 +41,12 @@ class ResultScreen extends StatelessWidget {
 
   Widget _buildResultCard(BuildContext context, double height, double width) {
     int correctCount = 0;
+    List<String> falseAnswers = [];
     for (int i = 0; i < correctAnswers.length; i++) {
       if (correctAnswers[i] == userAnswers[i]) {
         correctCount++;
+      } else {
+        falseAnswers.add(userAnswers[i]);
       }
     }
     double accuracy = (correctCount / correctAnswers.length) * 100;
@@ -51,21 +55,19 @@ class ResultScreen extends StatelessWidget {
     if (accuracy == 100) {
       colorTypeStatus = "No color blindness";
     } else if (accuracy >= 50) {
-      colorTypeStatus = "Possible Red-Green ";
-    } else if (accuracy >= 50) {
-      colorTypeStatus = "Red-Green";
+      colorTypeStatus = "Possible Red-Green";
     } else {
       colorTypeStatus = "Likely color blindness";
     }
 
     return Material(
       elevation: 10,
-      borderRadius: BorderRadius.circular(25.r),
+      borderRadius: BorderRadius.circular(25),
       clipBehavior: Clip.hardEdge,
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.all(10.0.r),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -85,7 +87,7 @@ class ResultScreen extends StatelessWidget {
               SizedBox(height: height * 0.02),
               _buildRow(
                   text: "Correct answers:",
-                  value: " ${correctAnswers.length - falseAnswers.length}",
+                  value: " $correctCount",
                   textColor: Colors.green,
                   height: height),
               SizedBox(height: height * 0.02),
@@ -115,12 +117,12 @@ class ResultScreen extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 15.sp, color: textColor ?? Colors.black),
+          style: TextStyle(fontSize: 15.0, color: textColor ?? Colors.black),
         ),
         if (value != null)
           Text(
             value,
-            style: TextStyle(fontSize: 15.sp, color: Colors.black),
+            style: const TextStyle(fontSize: 15.0, color: Colors.black),
           ),
       ],
     );
@@ -136,12 +138,12 @@ class ResultScreen extends StatelessWidget {
             height: height),
         SizedBox(height: height * 0.02),
         LinearPercentIndicator(
-          barRadius: Radius.circular(10.r),
-          width: 300.w,
-          lineHeight: 10.h,
+          barRadius: const Radius.circular(10),
+          width: 300,
+          lineHeight: 10,
           percent: percent,
-          backgroundColor: AppColor.linearProgress,
-          progressColor: AppColor.ligthBlue,
+          backgroundColor: Colors.grey,
+          progressColor: Colors.blue,
         ),
       ],
     );
@@ -150,12 +152,12 @@ class ResultScreen extends StatelessWidget {
   Widget _buildDetailsCard(BuildContext context, double height, double width) {
     return Material(
       elevation: 10,
-      borderRadius: BorderRadius.circular(25.r),
+      borderRadius: BorderRadius.circular(25),
       clipBehavior: Clip.hardEdge,
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.all(10.0.r),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: List.generate(
@@ -184,13 +186,13 @@ class ResultScreen extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 8.h),
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: CircleAvatar(
-            radius: 35.r,
+            radius: 35,
             backgroundImage: AssetImage(imagePath),
           ),
         ),
-        SizedBox(width: 10.w),
+        const SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -203,7 +205,7 @@ class ResultScreen extends StatelessWidget {
                 text: "Your answer:      ",
                 value: userAnswer,
                 height: 0,
-                textColor: AppColor.dotsColors),
+                textColor: isCorrect ? Colors.green : Colors.red),
           ],
         ),
       ],

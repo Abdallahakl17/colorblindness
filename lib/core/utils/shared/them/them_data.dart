@@ -33,7 +33,7 @@ ThemeData getDataThem() => ThemeData(
             GoogleFonts.poppins(fontSize: 16.sp, fontWeight: FontWeight.bold),
         labelMedium: GoogleFonts.poppins(
             color: AppColor.titleBoardgingColor,
-            fontSize: 14.sp,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w400),
         // loginNow
         titleLarge: GoogleFonts.poppins(

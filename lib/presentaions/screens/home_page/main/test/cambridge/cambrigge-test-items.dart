@@ -7,8 +7,8 @@ class CmabridgeScreenItems extends StatefulWidget {
   final Function(String) onSelect;
 
   const CmabridgeScreenItems({
-    super.key, 
-    required this.image, 
+    super.key,
+    required this.image,
     required this.onSelect,
   });
 
@@ -45,10 +45,14 @@ class _CmabridgeScreenItemsState extends State<CmabridgeScreenItems> {
                     height: 134,
                     child: Stack(
                       children: [
-                        _buildDirectionButton('top', AppImages.imageArrowTop, Alignment.topCenter),
-                        _buildDirectionButton('right', AppImages.imageArrowRigth, Alignment.centerRight),
-                        _buildDirectionButton('bottom', AppImages.imageArrowBottom, Alignment.bottomCenter),
-                        _buildDirectionButton('left', AppImages.imageArrowLeft, Alignment.centerLeft),
+                        _buildDirectionButton('top', AppImages.imageArrowTop,
+                            Alignment.topCenter),
+                        _buildDirectionButton('right',
+                            AppImages.imageArrowRigth, Alignment.centerRight),
+                        _buildDirectionButton('bottom',
+                            AppImages.imageArrowBottom, Alignment.bottomCenter),
+                        _buildDirectionButton('left', AppImages.imageArrowLeft,
+                            Alignment.centerLeft),
                       ],
                     ),
                   ),
@@ -56,12 +60,11 @@ class _CmabridgeScreenItemsState extends State<CmabridgeScreenItems> {
                     height: 34.h,
                   ),
                   SizedBox(
-                    height: 70.h,
-                    width: 320.w,
+                    height: 80.h,
+                    width: 330.w,
                     child: Text(
                       AppString.selectItemIn3Sec,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.labelMedium,
+                       style: Theme.of(context).textTheme.labelMedium,
                     ),
                   ),
                 ],
@@ -73,7 +76,8 @@ class _CmabridgeScreenItemsState extends State<CmabridgeScreenItems> {
     );
   }
 
-  Widget _buildDirectionButton(String direction, String imageAsset, Alignment alignment) {
+  Widget _buildDirectionButton(
+      String direction, String imageAsset, Alignment alignment) {
     return Align(
       alignment: alignment,
       child: GestureDetector(

@@ -1,11 +1,10 @@
 import 'package:bloc/bloc.dart';
- import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
 import 'package:equatable/equatable.dart';
-import 'package:color_blindness/core/utils/app_images.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 // State Class
-class CambridgeState extends Equatable {
+class IshiraState extends Equatable {
   final int currentPage;
   final List<String> images;
   final List<String> correctAnswers;
@@ -13,7 +12,7 @@ class CambridgeState extends Equatable {
   final bool isTestCompleted;
   final bool hasAnswered;
 
-  const CambridgeState({
+  const IshiraState({
     required this.currentPage,
     required this.images,
     required this.correctAnswers,
@@ -22,7 +21,7 @@ class CambridgeState extends Equatable {
     this.hasAnswered = false,
   });
 
-  CambridgeState copyWith({
+  IshiraState copyWith({
     int? currentPage,
     List<String>? images,
     List<String>? correctAnswers,
@@ -30,7 +29,7 @@ class CambridgeState extends Equatable {
     bool? isTestCompleted,
     bool? hasAnswered,
   }) {
-    return CambridgeState(
+    return IshiraState(
       currentPage: currentPage ?? this.currentPage,
       images: images ?? this.images,
       correctAnswers: correctAnswers ?? this.correctAnswers,
@@ -52,19 +51,15 @@ class CambridgeState extends Equatable {
 }
 
 // Cubit Class
-class CambridgeCubit extends Cubit<CambridgeState> {
-  CambridgeCubit()
-      : super(const CambridgeState(
+class IshihraCubit extends Cubit<IshiraState> {
+  IshihraCubit(List<String> images, List<String> correctAnswers)
+      : super(IshiraState(
           currentPage: 0,
-          images: [
-            AppImages.imageCTest,
-            AppImages.imageCTest2,
-            AppImages.imageCTest3,
-            AppImages.imageCTest4,
-          ],
-          correctAnswers: ['right', 'left', 'bottom', 'top'],
-          userAnswers: ['', '', '', ''],
+          images: images,
+          correctAnswers: correctAnswers,
+          userAnswers: List.filled(images.length, ''),
         ));
+
   var pageController = PageController(initialPage: 0);
 
   void onSelectAnswer(int index, String answer) {

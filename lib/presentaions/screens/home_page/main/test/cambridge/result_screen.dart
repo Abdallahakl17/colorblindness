@@ -51,11 +51,11 @@ class ResultScreen extends StatelessWidget {
     if (accuracy == 100) {
       colorTypeStatus = "No color blindness";
     } else if (accuracy >= 50) {
-      colorTypeStatus = "Possible Red-Green ";
+      colorTypeStatus = "Possible Red-Green";
     } else if (accuracy >= 50) {
       colorTypeStatus = "Red-Green";
     } else {
-      colorTypeStatus = "Likely color blindness";
+      colorTypeStatus = " Red-Green";
     }
 
     return Material(
@@ -131,7 +131,7 @@ class ResultScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildRow(
-            text: "Correct Percentage:",
+            text: " Percentage:",
             value: "${(percent * 100).toStringAsFixed(2)}%",
             height: height),
         SizedBox(height: height * 0.02),
@@ -200,7 +200,7 @@ class ResultScreen extends StatelessWidget {
               height: 0,
             ),
             _buildRow(
-                text: "Your answer:      ",
+                text: "Your answer:       ",
                 value: userAnswer,
                 height: 0,
                 textColor: AppColor.dotsColors),

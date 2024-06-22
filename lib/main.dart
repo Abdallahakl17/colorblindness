@@ -45,6 +45,7 @@ class _MyAppState extends State<MyApp> {
     log(screenWidth.toString());
      return MaterialApp(
       theme: getDataThem(),
+      
       debugShowCheckedModeBanner: false,
       home: const MainPage(),
     );

@@ -32,3 +32,5 @@ class Sevices {
     sl.registerFactory(() => AuthRegisterCubit(sl()));
   }
 }
+
+

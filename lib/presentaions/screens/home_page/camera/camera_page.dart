@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:io';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 import 'package:flutter/material.dart';
@@ -12,37 +14,8 @@ class EditImagePage extends StatefulWidget {
   @override
   _EditImagePageState createState() => _EditImagePageState();
 }
-
 class _EditImagePageState extends State<EditImagePage> {
   String colorName = '';
-
-  Future<void> _uploadImage() async {
-    final uri = Uri.parse('http://192.168.1.8:8000/predict/');
-    final request = http.MultipartRequest('POST', uri)
-      ..files.add(await http.MultipartFile.fromPath('file', widget.image.path));
-
-    try {
-      final response = await request.send();
-      if (response.statusCode == 200) {
-        final responseBody = await response.stream.bytesToString();
-        final jsonResponse = json.decode(responseBody);
-        setState(() {
-          colorName = jsonResponse['predicted_color']; // Access the correct key
-        });
-      } else {
-        setState(() {
-          colorName = 'Error: ${response.reasonPhrase}';
-          print(colorName);
-        });
-      }
-    } catch (e) {
-      setState(() {
-        colorName = 'Error: $e';
-        print(colorName);
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -93,5 +66,32 @@ class _EditImagePageState extends State<EditImagePage> {
         ),
       ),
     );
+  }
+
+  Future<void> _uploadImage() async {
+    final uri = Uri.parse('http://192.168.1.8:8000/predict/');
+    final request = http.MultipartRequest('POST', uri)
+      ..files.add(await http.MultipartFile.fromPath('file', widget.image.path));
+
+    try {
+      final response = await request.send();
+      if (response.statusCode == 200) {
+        final responseBody = await response.stream.bytesToString();
+        final jsonResponse = json.decode(responseBody);
+        setState(() {
+          colorName = jsonResponse['predicted_color'];
+        });
+      } else {
+        setState(() {
+          colorName = 'Error: ${response.reasonPhrase}';
+          print(colorName);
+        });
+      }
+    } catch (e) {
+      setState(() {
+        colorName = 'Error: $e';
+        print(colorName);
+      });
+    }
   }
 }

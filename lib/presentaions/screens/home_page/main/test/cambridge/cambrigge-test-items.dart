@@ -24,11 +24,7 @@ class _CmabridgeScreenItemsState extends State<CmabridgeScreenItems> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 24.w),
       child: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 520.h,
-              child: Column(
+        child:   Column(
                 children: [
                   SizedBox(
                     width: 254.w,
@@ -59,21 +55,19 @@ class _CmabridgeScreenItemsState extends State<CmabridgeScreenItems> {
                   SizedBox(
                     height: 34.h,
                   ),
-                  SizedBox(
-                    height: 80.h,
-                    width: 330.w,
-                    child: Text(
-                      AppString.selectItemIn3Sec,
-                       style: Theme.of(context).textTheme.labelMedium,
-                    ),
-                  ),
+                   SizedBox(
+              height: 71.h,
+              width: 330.w,
+              child: Text(
+                AppString.selectItemIn3Sec,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
                 ],
               ),
             ),
-          ],
-        ),
-      ),
-    );
+           );
   }
 
   Widget _buildDirectionButton(

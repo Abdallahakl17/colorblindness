@@ -7,7 +7,7 @@ import 'package:color_blindness/core/utils/shared/erorr/exceptions_service.dart'
  import 'package:color_blindness/data/model/login_factory_model.dart';
  
 abstract class BaseRemoteDataSource {
-  Future<LoginFactoryMoel> login(
+Future<LoginFactoryMoel> login(
       {required String email, required String password});
 }
 
@@ -41,3 +41,5 @@ class LoginRemoteDataSource extends BaseRemoteDataSource {
     }
   }
 }
+
+

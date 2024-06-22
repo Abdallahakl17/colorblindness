@@ -22,4 +22,5 @@ class AppColor {
   static const Color containerDotslinearColor = Color(0xFFEBF2F9);
   static const Color containerDotslinear2Color = Color(0xFFFFFFFF);
   static const Color hiddenColor = Colors.transparent;
+  static const Color redColor = Colors.red;
 }

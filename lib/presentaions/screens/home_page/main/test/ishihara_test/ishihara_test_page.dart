@@ -2,9 +2,6 @@ import 'package:color_blindness/presentaions/controller/cubits/ishihara_cubit.da
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/ishihara_test/ishihara_test_items.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/material.dart';
 
 class IshiharaTestPage extends StatelessWidget {
   final List<String> images = [
@@ -31,8 +28,10 @@ class IshiharaTestPage extends StatelessWidget {
           builder: (context, state) {
             return Column(
               children: [
-                Expanded(flex: 4,
+                Expanded(
+                  flex: 4,
                   child: PageView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     controller: context.read<IshihraCubit>().pageController,
                     itemCount: state.images.length,
                     itemBuilder: (context, index) {
@@ -47,30 +46,29 @@ class IshiharaTestPage extends StatelessWidget {
                     },
                   ),
                 ),
-                Expanded(flex: 1,
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        CustomButton(
-                          text: AppString.back,
-                          width: 149.w,
-                          heigth: 43.h,
-                          onTapped: context.read<IshihraCubit>().onBack,
-                        ),
-                        CustomButton(
-                          text: AppString.next,
-                          width: 149.w,
-                          heigth: 43.h,
-                          onTapped: () =>
-                              context.read<IshihraCubit>().onNext(context),
-                        ),
-                      ],
-                    ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButton(
+                        text: AppString.back,
+                        width: 149.w,
+                        heigth: 43.h,
+                        onTapped: context.read<IshihraCubit>().onBack,
+                      ),
+                      CustomButton(
+                        text: AppString.next,
+                        width: 149.w,
+                        heigth: 43.h,
+                        onTapped: () =>
+                            context.read<IshihraCubit>().onNext(context),
+                      ),
+                    ],
                   ),
                 ),
+                SizedBox(height: 40.h)
               ],
             );
           },

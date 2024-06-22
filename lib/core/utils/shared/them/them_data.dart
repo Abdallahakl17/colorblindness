@@ -1,6 +1,7 @@
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 ThemeData getDataThem() => ThemeData(
+  primaryColor: AppColor.blackColor,
       iconTheme: const IconThemeData(color: AppColor.titleBoardgingColor),
       appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
@@ -11,7 +12,7 @@ ThemeData getDataThem() => ThemeData(
           iconTheme: IconThemeData(
             color: AppColor.blackColor,
           )),
-      textTheme: TextTheme(
+      textTheme: TextTheme( 
         // heading
         displayLarge: GoogleFonts.poppins(
             color: AppColor.blackColor,

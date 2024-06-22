@@ -1,9 +1,6 @@
 import 'package:color_blindness/presentaions/controller/cubits/CambridgeCubit_dart.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambrigge-test-items.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/material.dart';
 
 class CambridgeTest extends StatelessWidget {
   const CambridgeTest({super.key});
@@ -18,9 +15,10 @@ class CambridgeTest extends StatelessWidget {
           builder: (context, state) {
             return Column(
               children: [
-                Expanded(flex: 4,
+                Expanded(
+                  flex: 4,
                   child: PageView.builder(
-                    reverse: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     controller: context.read<CambridgeCubit>().pageController,
                     onPageChanged: (index) {
                       context
@@ -38,31 +36,31 @@ class CambridgeTest extends StatelessWidget {
                     },
                   ),
                 ),
-                Expanded(
-                  child: Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      CustomButton(
-                                        text: AppString.back,
-                                        width: 149.w,
-                                        heigth: 43.h,
-                                        onTapped: context.read<CambridgeCubit>().onBack,
-                                      ),
-                                      CustomButton(
-                                        text: AppString.next,
-                                        width: 149.w,
-                                        heigth: 43.h,
-                                        onTapped: () =>
-                                            context.read<CambridgeCubit>().onNext(context),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 16.w),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CustomButton(
+                        text: AppString.back,
+                        width: 149.w,
+                        heigth: 43.h,
+                        onTapped: context.read<CambridgeCubit>().onBack,
+                      ),
+                      CustomButton(
+                        text: AppString.next,
+                        width: 149.w,
+                        heigth: 43.h,
+                        onTapped: () =>
+                            context.read<CambridgeCubit>().onNext(context),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 40.h,
                 )
-                ,
               ],
             );
           },

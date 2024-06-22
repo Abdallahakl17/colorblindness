@@ -51,8 +51,7 @@ class CambridgeState extends Equatable {
       ];
 }
 
-// Cubit Class
-class CambridgeCubit extends Cubit<CambridgeState> {
+ class CambridgeCubit extends Cubit<CambridgeState> {
   CambridgeCubit()
       : super(const CambridgeState(
           currentPage: 0,

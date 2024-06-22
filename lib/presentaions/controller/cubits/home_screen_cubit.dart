@@ -1,5 +1,3 @@
- 
-
 import 'package:color_blindness/presentaions/screens/home_page/main/home_screen.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
@@ -14,12 +12,16 @@ class HomeMainCubit extends Cubit<HomeMainStates> {
   List<BottomNavigationBarItem> bottomsNavItems = [
     const BottomNavigationBarItem(
       label: '',
-      icon: Icon(Icons.home),
+      icon: Icon(
+        Icons.home,
+        size: 28,
+      ),
     ),
     const BottomNavigationBarItem(
       label: '',
       icon: Icon(
         Icons.person_outlined,
+        size: 28,
       ),
     ),
   ];

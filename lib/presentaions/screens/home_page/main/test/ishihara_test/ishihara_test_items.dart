@@ -14,84 +14,76 @@ class IshiharaScreenItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 24.h),
       child: Center(
         child: Column(
           children: [
             SizedBox(
-              height: 500.h,
-              child: Column(
+              width: 254.w,
+              height: 254.h,
+              child: CircleAvatar(
+                backgroundImage: AssetImage(image),
+              ),
+            ),
+            const SizedBox(height: 24.0),
+            SizedBox(
+              height: 113.h,
+              width: 340.w,
+              child: Stack(
+                alignment: Alignment.center,
                 children: [
-                  SizedBox(
-                    width: 254.w,
-                    height: 254.h,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(image),
-                      radius: 127.0,
+                  Positioned(
+                    bottom: 60.h,
+                    left: 0.w,
+                    child: IshiharaButton(
+                      text: '2',
+                      onTap: () => onSelect('2'),
                     ),
                   ),
-                  const SizedBox(height: 24.0),
-                  SizedBox(
-                    height: 108.h,
-                    width: 325.w,
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          bottom: 55.0,
-                          left: 10.0,
-                          child: IshiharaButton(
-                            text: '2',
-                            onTap: () => onSelect('2'),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 40.0,
-                          left: 75.0,
-                          child: IshiharaButton(
-                            text: '27',
-                            onTap: () => onSelect('27'),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 30.0,
-                          right: 136.0,
-                          child: IshiharaButton(
-                            text: '74',
-                            onTap: () => onSelect('74'),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 55.0,
-                          right: 10.0,
-                          child: IshiharaButton(
-                            text: '12',
-                            onTap: () => onSelect('12'),
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 40.0,
-                          right: 75.0,
-                          child: IshiharaButton(
-                            text: '42',
-                            onTap: () => onSelect('42'),
-                          ),
-                        ),
-                      ],
+                  Positioned(
+                    bottom: 40.h,
+                    left: 60.w,
+                    child: IshiharaButton(
+                      text: '27',
+                      onTap: () => onSelect('27'),
                     ),
                   ),
-                    SizedBox(
-                    height: 70.h,
-                    width: 320.w,
-                    child: Text(
-                      AppString.selectItemIn3Sec,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.labelMedium,
+                  Positioned(
+                    bottom: 30.h,
+                    right: 120.w,
+                    child: IshiharaButton(
+                      text: '74',
+                      onTap: () => onSelect('74'),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 60.h,
+                    right: 0.w,
+                    child: IshiharaButton(
+                      text: '12',
+                      onTap: () => onSelect('12'),
+                    ),
+                  ),
+                  Positioned(
+                    bottom: 40.h,
+                    right: 60.w,
+                    child: IshiharaButton(
+                      text: '42',
+                      onTap: () => onSelect('42'),
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 24.0),
+            SizedBox(
+              height: 71.h,
+              width: 330.w,
+              child: Text(
+                AppString.selectItemIn3Sec,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelMedium,
+              ),
+            ),
           ],
         ),
       ),

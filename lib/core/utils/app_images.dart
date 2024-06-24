@@ -12,6 +12,7 @@ class AppImages {
   static const String imageCameraIcon = "assets/images/camira.png";
   static const String imageEyeIcon = "assets/images/eyesicon.png";
   static const String imageGlassIcon = "assets/images/glassicon.png";
+  static const String imageGlass  = "assets/images/squreGlasses.png";
   static const String imagecont = "assets/images/cont.png";
   static const String imageCemraDilog = "assets/images/cairadialog.png";
   static const String imageArrowTop = "assets/images/arrowtop.png";

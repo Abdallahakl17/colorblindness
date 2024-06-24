@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                   imag: AppImages.imageEyeIcon,
                   text: AppString.test,
                   onTap: () {
-                    Routes.navigateTo(context: context, widget: Test());
+                    Routes.navigateTo(context: context, widget: const Test());
                   },
                 ),
                 ConMainIconsHome(
@@ -63,7 +63,9 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemCount: 4,
-              itemBuilder: (context, index) => const SpearatedRowItems(),
+              itemBuilder: (context, index) => SpearatedRowItems(
+                img: AppImages.imageGlassArticle,
+              ),
               separatorBuilder: (BuildContext context, int index) =>
                   SizedBox(width: 16.w),
             ),
@@ -83,7 +85,9 @@ class HomeScreen extends StatelessWidget {
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemCount: 4,
-              itemBuilder: (context, index) => const SpearatedRowItems(),
+              itemBuilder: (context, index) => SpearatedRowItems(
+                img: AppImages.imageGlass,
+              ),
               separatorBuilder: (BuildContext context, int index) =>
                   SizedBox(width: 16.w),
             ),

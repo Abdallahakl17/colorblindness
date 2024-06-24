@@ -30,7 +30,7 @@ class Test extends StatelessWidget {
           tex: AppString.framsworthLannternTest,
           onPressed: () {
             Routes.navigateTo(
-                context: context, widget: const FramsworthLannternTestPage());
+                context: context, widget:   FramColorBlindTestPage());
           }),
       TextContainerTest(
           imag: AppImages.cambridgeColorTest,

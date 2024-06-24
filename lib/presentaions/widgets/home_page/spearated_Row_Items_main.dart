@@ -1,9 +1,9 @@
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class SpearatedRowItems extends StatelessWidget {
-  const SpearatedRowItems({
-    super.key,
-  });
+    SpearatedRowItems({super.key, required this.img
+   });
+  String img;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SpearatedRowItems extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Image.asset(
-                      AppImages.imageGlassArticle,
+                     img,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),

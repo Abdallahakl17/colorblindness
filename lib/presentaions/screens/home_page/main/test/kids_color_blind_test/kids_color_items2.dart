@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:color_blindness/presentaions/widgets/home_page/ColorChangingButtonTest.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
-class KidsColorBlindTestPage1 extends StatefulWidget {
-  const KidsColorBlindTestPage1({Key? key}) : super(key: key);
+class KidsColorBlindTestPage2 extends StatefulWidget {
+  const KidsColorBlindTestPage2({Key? key}) : super(key: key);
 
   @override
-  _KidsColorBlindTestPage1State createState() => _KidsColorBlindTestPage1State();
+  _KidsColorBlindTestPage2State createState() =>
+      _KidsColorBlindTestPage2State();
 }
 
-class _KidsColorBlindTestPage1State extends State<KidsColorBlindTestPage1> {
+class _KidsColorBlindTestPage2State extends State<KidsColorBlindTestPage2> {
   String? _pressedDirection;
   Color _innerColor = AppColor.hiddenColor;
 
@@ -23,7 +24,7 @@ class _KidsColorBlindTestPage1State extends State<KidsColorBlindTestPage1> {
 
   @override
   Widget build(BuildContext context) {
-    return   Padding(
+    return  Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.w),
         child: Center(
           child: Column(
@@ -32,7 +33,7 @@ class _KidsColorBlindTestPage1State extends State<KidsColorBlindTestPage1> {
                 width: 254.w,
                 height: 254.h,
                 child: const CircleAvatar(
-                  backgroundImage: AssetImage(AppImages.catImage),
+                  backgroundImage: AssetImage(AppImages.freImage),
                 ),
               ),
               SizedBox(height: 24.h),
@@ -42,10 +43,10 @@ class _KidsColorBlindTestPage1State extends State<KidsColorBlindTestPage1> {
                 child: Row(
                   children: [
                     const ColorChangingButton(),
-                    Image.asset(AppImages.dogImage),
+                    Image.asset(AppImages.butterflyImage),
                     const Spacer(),
                     const ColorChangingButton(),
-                    Image.asset(AppImages.truleImage),
+                    Image.asset(AppImages.birdImage),
                   ],
                 ),
               ),
@@ -62,7 +63,7 @@ class _KidsColorBlindTestPage1State extends State<KidsColorBlindTestPage1> {
             ],
           ),
         ),
-    
+      
     );
   }
 }

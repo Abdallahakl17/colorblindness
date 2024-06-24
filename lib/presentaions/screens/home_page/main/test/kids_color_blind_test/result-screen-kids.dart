@@ -1,20 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
+ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
-class ResultScreen extends StatelessWidget {
-  final List<String> correctAnswers;
-  final List<String> falseAnswers;
-  final List<String> userAnswers;
-  final List<String> images;
+class ResultScreenKids extends StatelessWidget {
+  final List<String> correctAnswers = ["Dog", "Butterfly", "Fish", "Turtle"];
+  final List<String> userAnswers = ["Dog", "Butterfly", "Fish", "Monkey"];
+  final List<String> images = [
+    AppImages.catImage,
+    AppImages.freImage,
+    AppImages.feshhImage,
+    AppImages.dolfImage,
+  ];
 
-  const ResultScreen({
-    Key? key,
-    required this.correctAnswers,
-    required this.falseAnswers,
-    required this.userAnswers,
-    required this.images,
-  }) : super(key: key);
+  ResultScreenKids({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +52,7 @@ class ResultScreen extends StatelessWidget {
     if (accuracy == 100) {
       colorTypeStatus = "No Color Blindness";
     } else if (accuracy >= 50) {
-      colorTypeStatus = "No Red-Green";
+      colorTypeStatus = "No Color Blindness";
     } else {
       colorTypeStatus = "Red-Green";
     }
@@ -202,7 +199,7 @@ class ResultScreen extends StatelessWidget {
               height: 0,
             ),
             _buildRow(
-                text: "Your answer:     ",
+                text: "Your answer:      ",
                 value: userAnswer,
                 height: 0,
                 textColor: isCorrect ? Colors.green : Colors.red),

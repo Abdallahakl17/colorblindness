@@ -1,6 +1,7 @@
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/cambridgetest-.dart';
- import 'package:color_blindness/presentaions/screens/home_page/main/test/framsworth_lanntern_test/framsworth_lanntern_test_page.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/framsworth_lanntern_test/framsworth_lanntern_test_page.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/ishihara_test/ishihara_test_page.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/kids_color_blind_test/kids_color_blind_test.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/kids_color_blind_test/kids_color_blind_test_page_items.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
@@ -22,8 +23,7 @@ class Test extends StatelessWidget {
           imag: AppImages.ishiharaTest,
           tex: AppString.ishiharaTest,
           onPressed: () {
-            Routes.navigateTo(
-                context: context, widget:   IshiharaTestPage());
+            Routes.navigateTo(context: context, widget: IshiharaTestPage());
           }),
       TextContainerTest(
           imag: AppImages.framsworthTest,
@@ -42,8 +42,7 @@ class Test extends StatelessWidget {
           imag: AppImages.kidsColorBlindTest,
           tex: AppString.kidsColorBlindTest,
           onPressed: () {
-            Routes.navigateTo(
-                context: context, widget:   KidsColorBlindTestPage());
+            Routes.navigateTo(context: context, widget:   KidsTestPage());
           }),
     ];
     return Scaffold(

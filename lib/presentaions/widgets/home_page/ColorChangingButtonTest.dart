@@ -1,7 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class ColorChangingButton extends StatefulWidget {
-  const ColorChangingButton({Key? key}) : super(key: key);
+  const ColorChangingButton({Key? key, this.onTap}) : super(key: key);
+
+  final VoidCallback? onTap;
 
   @override
   _ColorChangingButtonState createState() => _ColorChangingButtonState();
@@ -16,6 +19,9 @@ class _ColorChangingButtonState extends State<ColorChangingButton> {
           ? AppColor.dotsColors
           : AppColor.hiddenColor;
     });
+    if (widget.onTap != null) {
+      widget.onTap!();
+    }
   }
 
   @override
@@ -23,24 +29,24 @@ class _ColorChangingButtonState extends State<ColorChangingButton> {
     return GestureDetector(
       onTap: _changeColor,
       child: Container(
-        padding: EdgeInsets.all(2.r),
-        width: 30.w,
-        height: 30.h,
+        padding: EdgeInsets.all(2),
+        width: 30,
+        height: 30,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            width: 2.w,
+            width: 2,
             color: AppColor.colorBorderCircleButton,
           ),
           color: AppColor.hiddenColor,
         ),
         child: Container(
-          width: 25.w,
-          height: 25.h,
+          width: 25,
+          height: 25,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
-              width: 2.w,
+              width: 2,
               color: AppColor.colorBorderCircleButton,
             ),
             color: _innerColor,

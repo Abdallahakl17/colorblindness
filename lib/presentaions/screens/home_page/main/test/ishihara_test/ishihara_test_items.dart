@@ -111,7 +111,7 @@ class IshiharaButton extends StatelessWidget {
         height: 54.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(color: Colors.blue),
+          border: Border.all(color: AppColor.ligthBlue ),
         ),
         child: Center(
           child: Text(

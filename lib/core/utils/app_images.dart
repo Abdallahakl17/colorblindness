@@ -28,10 +28,17 @@ class AppImages {
   static const String ishiharaTest3 = "assets/images/42.png";
   static const String ishiharaTest4 = "assets/images/74.png";
   static const String catImage = "assets/images/cat.png";
-  static const String recImage = "assets/images/rec.png";
-  static const String freImage = "assets/images/fras.png";
+   static const String freImage = "assets/images/fras.png";
   static const String feshhImage = "assets/images/fesh.png";
   static const String dolfImage = "assets/images/dolf.png";
+
+  //
+  static const String dogImage = "assets/images/dog.png";
+  static const String truleImage = "assets/images/turtle.png";
+  static const String monkeyImage = "assets/images/monkey.png";
+  static const String fishImage = "assets/images/fish.png";
+  static const String butterflyImage = "assets/images/butterfly.png";
+  static const String birdImage = "assets/images/bird.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";
   static const String cambridgeColorTest =

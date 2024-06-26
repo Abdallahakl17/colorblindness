@@ -9,6 +9,55 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init;
 
+    final List<Map<String, String>> articles = [
+      {
+        'title': 'What Causes Color Blindness?',
+        'img': AppImages.image2Article,
+        'link':
+            'https://www.brainandlife.org/articles/people-who-are-color-blind-cant-see-the-full-range',
+      },
+      {
+        'img': AppImages.imageGlassArticle,
+        'title': 'Types of Color Vision Deficiency',
+        'link':
+            'https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness',
+      },
+      {
+        'img': AppImages.imageGlass,
+        'title': 'Color blindness - Diagnosis and treatment',
+        'link':
+            'https://www.mayoclinic.org/diseases-conditions/poor-color-vision/diagnosis-treatment/drc-20354991',
+      },
+      {
+        'img': AppImages.imageGlassArticle,
+        'title': 'How Does Technology Help?',
+        'link':
+            'https://chicagolighthouse.org/sandys-view/assistive-technology',
+      },
+    ];
+    final List<Map<String, String>> glassess = [
+      {
+        'title': 'COLOR BLIND GLASSES',
+        'img': AppImages.glasstype,
+        'link': 'https://enchroma.com',
+      },
+      {
+        'img': AppImages.lens,
+        'title': 'Color Blind Lenses',
+        'link': 'https://pilestone.com',
+      },
+      {
+        'img': AppImages.glass3,
+        'title': 'Discover a world',
+        'link': 'https://colormax.org',
+      },
+      {
+        'img': AppImages.imageGlass,
+        'title': 'improve color vision',
+        'link': 'https://www.vino.vi/collections/color-blind-glasses',
+      },
+    ];
+
     return Padding(
       padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 20.h),
       child: Column(
@@ -62,9 +111,11 @@ class HomeScreen extends StatelessWidget {
             child: ListView.separated(
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
-              itemCount: 4,
+              itemCount: articles.length,
               itemBuilder: (context, index) => SpearatedRowItems(
-                img: AppImages.imageGlassArticle,
+                img: articles[index]['img']!,
+                texx: articles[index]['title']!,
+                url: articles[index]['link']!,
               ),
               separatorBuilder: (BuildContext context, int index) =>
                   SizedBox(width: 16.w),
@@ -86,7 +137,9 @@ class HomeScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) => SpearatedRowItems(
-                img: AppImages.imageGlass,
+                img: glassess[index]['img']!,
+                texx: glassess[index]['title']!,
+                url: glassess[index]['link']!,
               ),
               separatorBuilder: (BuildContext context, int index) =>
                   SizedBox(width: 16.w),

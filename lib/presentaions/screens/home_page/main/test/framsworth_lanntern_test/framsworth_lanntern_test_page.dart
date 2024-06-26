@@ -1,16 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:color_blindness/presentaions/widgets/home_page/ColorChangingButtonTest.dart';
+ import 'package:color_blindness/presentaions/widgets/home_page/ColorChangingButtonTest.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
-
+ 
 class FramColorBlindTestPage extends StatefulWidget {
-  const FramColorBlindTestPage({Key? key}) : super(key: key);
+  final String image;
+
+  const FramColorBlindTestPage({Key? key, required this.image}) : super(key: key);
 
   @override
-  _KidsColorBlindTestPage1State createState() =>
-      _KidsColorBlindTestPage1State();
+  _FramColorBlindTestPageState createState() => _FramColorBlindTestPageState();
 }
 
-class _KidsColorBlindTestPage1State extends State<FramColorBlindTestPage> {
+class _FramColorBlindTestPageState extends State<FramColorBlindTestPage> {
   String? _pressedDirection;
   Color _innerColor = AppColor.hiddenColor;
 
@@ -32,21 +32,99 @@ class _KidsColorBlindTestPage1State extends State<FramColorBlindTestPage> {
             SizedBox(
               width: 254.w,
               height: 254.h,
-              child: const CircleAvatar(
-                backgroundImage: AssetImage(AppImages.catImage),
+              child: CircleAvatar(
+                backgroundImage: AssetImage(widget.image),
               ),
             ),
             SizedBox(height: 24.h),
             SizedBox(
-              width: 260.w,
-              height: 60.h,
-              child: Row(
+              height: 80.h,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const ColorChangingButton(),
-                  Image.asset(AppImages.dogImage),
-                  const Spacer(),
-                  const ColorChangingButton(),
-                  Image.asset(AppImages.truleImage),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'UP:     ',
+                        style: Theme.of(context).textTheme.bodyLarge!,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Yellow',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Red',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Green',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text('Down:',
+                          style: Theme.of(context).textTheme.bodyLarge!),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Yellow',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Red',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 6.w),
+                        child: const ColorChangingButton(),
+                      ),
+                      Text(
+                        'Green',
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleSmall!
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

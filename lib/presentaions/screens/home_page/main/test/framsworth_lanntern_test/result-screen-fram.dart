@@ -1,14 +1,52 @@
+import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class ResultScreenFram extends StatelessWidget {
-  final List<String> correctAnswers = ["Dog", "Butterfly", "Fish", "Turtle"];
-  final List<String> userAnswers = ["Dog", "Butterfly", "Fish", "Monkey"];
+  final List<String> correctAnswers = [
+    
+    "Up- Red, Down-Green",
+    "Up- Red, Down-Yellow",
+    "Up-Red, Down-Red",
+    //yellow
+    "Up-Yellow, Down-Green",
+    "Up-Yellow, Down-Red",
+    "Up-Yellow, Down-Yellow",
+    //green
+    "Up-Green, Down-Green",
+    "Up-Green, Down-Red",
+    "Up-Green, Down-Yellow",
+  ];
+
+  final List<String> userAnswers = [
+    //red
+   
+    "Up- Red, Down-Green",
+    "Up- Red, Down-Red",
+    "Up-Red, Down-Red",
+    //yellow
+    "Up-Red, Down-Green",
+    "Up-Red, Down-Red",
+    "Up-Red, Down-Red",
+    //green
+    "Up-Green, Down-Green",
+    "Up-Green, Down-Red",
+    "Up-Green, Down-Red",
+  ];
+
   final List<String> images = [
-    AppImages.catImage,
-    AppImages.freImage,
-    AppImages.feshhImage,
-    AppImages.dolfImage,
+    //red
+    AppImages.red1,
+    AppImages.red2,
+    AppImages.red3,
+    //yellow
+    AppImages.yellow1,
+    AppImages.yellow2,
+    AppImages.yellow3,
+    //green
+    AppImages.green1,
+    AppImages.green2,
+    AppImages.green3,
   ];
 
   ResultScreenFram({Key? key}) : super(key: key);
@@ -22,15 +60,17 @@ class ResultScreenFram extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Result"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(19.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _buildResultCard(context, height, width),
-            SizedBox(height: height * 0.05),
-            _buildDetailsCard(context, height, width),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(19.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _buildResultCard(context, height, width),
+              SizedBox(height: height * 0.05),
+              _buildDetailsCard(context, height, width),
+            ],
+          ),
         ),
       ),
     );
@@ -46,16 +86,19 @@ class ResultScreenFram extends StatelessWidget {
         falseAnswers.add(userAnswers[i]);
       }
     }
-    double accuracy = (correctCount / correctAnswers.length) * 100;
+double accuracy = (correctCount / correctAnswers.length) * 100;
 
-    String colorTypeStatus;
-    if (accuracy == 100) {
-      colorTypeStatus = "No Color Blindness";
-    } else if (accuracy >= 50) {
-      colorTypeStatus = "No Color Blindness";
-    } else {
-      colorTypeStatus = "Red-Green";
-    }
+String colorTypeStatus;
+if (accuracy == 100) {
+  colorTypeStatus = "No Color Blindness"; // لا يوجد عمى لوني
+} else if (accuracy >= 50) {
+  colorTypeStatus = "Possible Yellow blue"; // احتمال وجود عمى لوني
+} else {
+  colorTypeStatus = " Yellow blue" ; // احتمال كبير لوجود عمى لوني
+}
+
+
+   
 
     return Material(
       elevation: 10,
@@ -70,15 +113,18 @@ class ResultScreenFram extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    'Color Blindness-Type: ',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      'Color Blindness-Type: ',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.w600),
+                    ),
                   ),
                   Text(colorTypeStatus,
-                      style: Theme.of(context).textTheme.titleMedium!),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 10.sp,color: AppColor.titleBoardgingColor)),
                 ],
               ),
               SizedBox(height: height * 0.02),
@@ -114,12 +160,15 @@ class ResultScreenFram extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 15.0, color: textColor ?? Colors.black),
+          style: TextStyle(fontSize: 10.sp, color: textColor ?? Colors.black),
         ),
         if (value != null)
-          Text(
-            value,
-            style: const TextStyle(fontSize: 15.0, color: Colors.black),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              value,
+              style: TextStyle(fontSize: 9.sp, color: Colors.black,fontWeight: FontWeight.w600),
+            ),
           ),
       ],
     );

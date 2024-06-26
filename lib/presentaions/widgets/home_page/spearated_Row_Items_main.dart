@@ -1,9 +1,12 @@
+import 'package:color_blindness/presentaions/screens/home_page/main/test/web-view.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
 class SpearatedRowItems extends StatelessWidget {
-    SpearatedRowItems({super.key, required this.img
-   });
+  SpearatedRowItems(
+      {super.key, required this.img, required this.texx, required this.url});
   String img;
+  String texx;
+  String url;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +14,16 @@ class SpearatedRowItems extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => WebVeiwWidge(
+                  url: url,
+                ),
+              ),
+            );
+          },
           child: Material(
             clipBehavior: Clip.hardEdge,
             borderRadius: BorderRadius.circular(20.r),
@@ -24,7 +36,7 @@ class SpearatedRowItems extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Image.asset(
-                     img,
+                      img,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -40,7 +52,7 @@ class SpearatedRowItems extends StatelessWidget {
                           children: [
                             SizedBox(
                               child: Text(
-                                "Color Blindness case  .. ",
+                                texx,
                                 overflow: TextOverflow.ellipsis,
                                 style: Theme.of(context)
                                     .textTheme

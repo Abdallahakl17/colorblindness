@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:color_blindness/presentaions/widgets/imports.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreenIshara extends StatelessWidget {
   final List<String> correctAnswers;
   final List<String> falseAnswers;
   final List<String> userAnswers;
   final List<String> images;
 
-  const ResultScreen({
+  const ResultScreenIshara({
     Key? key,
     required this.correctAnswers,
     required this.falseAnswers,
@@ -55,7 +55,7 @@ class ResultScreen extends StatelessWidget {
     if (accuracy == 100) {
       colorTypeStatus = "No Color Blindness";
     } else if (accuracy >= 50) {
-      colorTypeStatus = "No Red-Green";
+      colorTypeStatus = "Possible Red-Green";
     } else {
       colorTypeStatus = "Red-Green";
     }
@@ -73,15 +73,10 @@ class ResultScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
-                    'Color Blindness-Type: ',
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(fontWeight: FontWeight.w600),
-                  ),
+                  Text('Color Blindness-Type:',
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w700)),
                   Text(colorTypeStatus,
-                      style: Theme.of(context).textTheme.titleMedium!),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppColor.titleBoardgingColor)),
                 ],
               ),
               SizedBox(height: height * 0.02),
@@ -117,12 +112,12 @@ class ResultScreen extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 15.0, color: textColor ?? Colors.black),
+          style: TextStyle(fontSize: 10.sp, color: textColor ?? Colors.black),
         ),
         if (value != null)
           Text(
             value,
-            style: const TextStyle(fontSize: 15.0, color: Colors.black),
+            style: const TextStyle(fontSize: 13.0, color: Colors.black),
           ),
       ],
     );
@@ -202,7 +197,7 @@ class ResultScreen extends StatelessWidget {
               height: 0,
             ),
             _buildRow(
-                text: "Your answer:     ",
+                text: "Your answer:      ",
                 value: userAnswer,
                 height: 0,
                 textColor: isCorrect ? Colors.green : Colors.red),

@@ -25,7 +25,7 @@ class HomeMainCubit extends Cubit<HomeMainStates> {
       ),
     ),
   ];
-  List<Widget> screens = [const HomeScreen(), const ProfileScreen()];
+  List<Widget> screens = [  HomeScreen(), const ProfileScreen()];
   void changBottomNavBar(int index) {
     indexCurent = index;
     emit(BottomNavBar());

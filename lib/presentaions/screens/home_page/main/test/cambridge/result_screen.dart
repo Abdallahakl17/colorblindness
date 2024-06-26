@@ -78,8 +78,13 @@ class ResultScreen extends StatelessWidget {
                         .titleLarge!
                         .copyWith(fontWeight: FontWeight.w600),
                   ),
-                  Text(colorTypeStatus,
-                      style: Theme.of(context).textTheme.titleMedium!),
+                  FittedBox(
+                                        fit: BoxFit.scaleDown,
+
+                    child: Text(
+                      colorTypeStatus,
+                        style: Theme.of(context).textTheme.titleMedium!),
+                  ),
                 ],
               ),
               SizedBox(height: height * 0.02),
@@ -203,7 +208,7 @@ class ResultScreen extends StatelessWidget {
                 text: "Your answer:       ",
                 value: userAnswer,
                 height: 0,
-                textColor: AppColor.dotsColors),
+                textColor: isCorrect ? Colors.green : Colors.red),
           ],
         ),
       ],

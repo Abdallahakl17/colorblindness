@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:color_blindness/presentaions/screens/home_page/main/test/cambridge/result_screen.dart';
+import 'package:color_blindness/presentaions/screens/home_page/main/test/ishihara_test/result_screen.dart';
 import 'package:equatable/equatable.dart';
  import 'package:flutter/material.dart';
 
@@ -90,7 +91,7 @@ class IshihraCubit extends Cubit<IshiraState> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => ResultScreen(
+            builder: (context) => ResultScreenIshara(
               correctAnswers: state.correctAnswers,
               userAnswers: state.userAnswers,
               images: state.images,

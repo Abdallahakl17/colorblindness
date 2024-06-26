@@ -29,9 +29,9 @@ class _ColorChangingButtonState extends State<ColorChangingButton> {
     return GestureDetector(
       onTap: _changeColor,
       child: Container(
-        padding: EdgeInsets.all(2),
-        width: 30,
-        height: 30,
+        padding: const EdgeInsets.all(2),
+        width: 30.w,
+        height: 30.h,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
@@ -41,8 +41,8 @@ class _ColorChangingButtonState extends State<ColorChangingButton> {
           color: AppColor.hiddenColor,
         ),
         child: Container(
-          width: 25,
-          height: 25,
+          width: 27.w,
+          height: 27.h,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(

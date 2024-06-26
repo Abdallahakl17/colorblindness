@@ -8,11 +8,15 @@ class AppImages {
   static const String imageGoogle = "assets/images/Group 123.svg";
   static const String imageMedia = "assets/images/media.png";
   static const String imageGlassArticle = "assets/images/eyearticle.png";
+  static const String image2Article = "assets/images/link2.jpeg";
+  static const String lens = "assets/images/lens.png";
+  static const String glasstype = "assets/images/ColorBalanc.jpg";
+  static const String glass3 = "assets/images/glass3.png";
   static const String imagegirlOutline = "assets/images/girlOutline.png";
   static const String imageCameraIcon = "assets/images/camira.png";
   static const String imageEyeIcon = "assets/images/eyesicon.png";
   static const String imageGlassIcon = "assets/images/glassicon.png";
-  static const String imageGlass  = "assets/images/squreGlasses.png";
+  static const String imageGlass = "assets/images/squreGlasses.png";
   static const String imagecont = "assets/images/cont.png";
   static const String imageCemraDilog = "assets/images/cairadialog.png";
   static const String imageArrowTop = "assets/images/arrowtop.png";
@@ -29,7 +33,7 @@ class AppImages {
   static const String ishiharaTest3 = "assets/images/42.png";
   static const String ishiharaTest4 = "assets/images/74.png";
   static const String catImage = "assets/images/cat.png";
-   static const String freImage = "assets/images/fras.png";
+  static const String freImage = "assets/images/fras.png";
   static const String feshhImage = "assets/images/fesh.png";
   static const String dolfImage = "assets/images/dolf.png";
 
@@ -39,6 +43,17 @@ class AppImages {
   static const String monkeyImage = "assets/images/monkey.png";
   static const String fishImage = "assets/images/fish.png";
   static const String butterflyImage = "assets/images/butterfly.png";
+  //
+  static const String red1 = "assets/images/red1.png";
+  static const String red2 = "assets/images/red2.png";
+  static const String red3 = "assets/images/red3.png";
+  static const String yellow1 = "assets/images/yellow1.png";
+  static const String yellow2 = "assets/images/yellow2.png";
+  static const String yellow3 = "assets/images/yellow3.png";
+  static const String green1 = "assets/images/green1.png";
+  static const String green2 = "assets/images/green2.png";
+  static const String green3 = "assets/images/green3.png";
+
   static const String birdImage = "assets/images/bird.png";
   static const String framsworthTest =
       "assets/images/Framsworth Lanntern Test.png";
